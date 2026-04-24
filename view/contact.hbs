@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support</title>
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+
+<div id="main">
+
+    
+    <div id="header">
+        <div class="logo">College Dost</div>
+
+        <ul class="navbar">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/AboutUs">ABOUT</a></li>
+            <li><a href="/login" class="btn">LOGIN</a></li>
+        </ul>
+    </div>
+
+    <div id="fakeheader"></div>
+
+
+    <div id="page1">
+
+        <h1>Contact Support</h1>
+        <h3>Need help or have any questions?</h3>
+
+        <div class="contact-info">
+            <p>
+                We’re here to assist you! If you face any issues while using College Dost or need guidance, feel free to reach out.
+            </p>
+
+            <ul>
+                <li>📧 Email: support@collegedost.com</li>
+                <li>📍 Location: Department of CSBS, KIT’s College of Engineering, Kolhapur</li>
+                <li>🕒 Support Hours: 9:00 AM – 4:30 PM (Tue – Sat)</li>
+            </ul>
+
+            <p>You can also use the platform’s chat feature to connect with mentors for quick help.</p>
+            <p>We aim to respond to all queries as soon as possible.</p>
+        </div>
+
+      
+      <form action="/student/contact" method="POST">
+         <input type="text" name="name" placeholder="Your Name" required>
+
+         <input type="email" name="email" placeholder="Your Email" required>
+
+         <textarea name="message" placeholder="Your Message" required></textarea>
+
+         <button type="submit">Send Message</button>
+
+           {{#if message}}
+             <p style="color:antiquewhite;">{{message}}</p>
+           {{/if}}
+     </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+

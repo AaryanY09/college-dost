@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mentor Dashboard</title>
+    <link rel="stylesheet" href="/css/mentordash.css">
+</head>
+<body>
+
+<div id="main">
+
+   
+    <div id="header">
+        <div class="logo">CollegeDost</div>
+                <h3>Mentor dashboard</h3>
+        <ul class="navbar">
+            
+            
+            <li><a href="mentprofile">Profile</a></li>
+            <li><a href="/mentor/logout" class="btn">Logout</a></li>
+        </ul>
+    </div>
+
+\
+
+   
+    <div id="fakeheader"></div>
+
+   
+    <div id="hero">
+        <div class="welcome">
+            <h1>Hello, {{mentor.name}} 👋</h1>
+            <p>Guide the novice students 🚀</p>
+        </div>
+    </div>
+
+   
+    <div id="cards">
+
+        <div class="card">
+            <h3>📚 Share content</h3>
+            <p>Share technical/non-technical contents/information</p>
+            <img src="\images\ment contents.png" alt="">
+            {{!-- <button accesskey="">Explore</button> --}}
+            <a href="#" class="btn">Share</a>
+        </div>
+
+        <div class="card">
+            <h3>Announcement🔉</h3>
+            <p>Announce about events/internships,etc.</p>
+            <img src="\images\announcements.png" alt="">
+            <a href="#" class="btn">Find</a>
+        </div>
+
+        <div class="card">
+            <h3>👨‍🏫My invoice students</h3>
+            <p>Guide students</p>
+            <img src="\images\mentor in std dash.png" alt="">
+            <a href="#" class="btn">See</a>
+        </div>
+
+        <div class="card">
+            <h3>💬 Chat</h3>
+            <p>Chat with your invoice student</p>
+            <img src="\images\chat std img.png" alt="">
+            <a href="#" class="btn">Chat</a>
+        </div>
+
+        <div class="card">
+            <h3>🗨️ Anonymous Chat</h3>
+            <p>Ask anything freely</p>
+            <img src="\images\anonymous.png" alt="">
+            <a href="#" class="btn">Anonymous chat</a>
+        </div>
+
+        <div class="card">
+            <h3>🌟 Alumni Spotlights</h3>
+            <p>Learn from real experiences</p>
+            <img src="\images\spotlight.png" alt="">
+            <a href="#" class="btn">Spotlight</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update student</title>
+    <link rel="stylesheet" href="/css/updatestd.css">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">LOGO</div>
+            <h2>Update student</h2>
+            <div class="box">
+                <a href="/admin/adminP" class="btn btn-secondary">Back to dashboard</a>
+             </div>
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+             <form action="/admin/updatestd" method="POST">
+                            <input name="prn" placeholder="PRN">
+                            <input name="name" placeholder="Enter Name have to update">
+                            <input name="year" placeholder="Enter Year have to update">
+                            <input name="division" placeholder="Enter Division have to update">
+                            {{!-- <input name="password" placeholder="Password"> --}}
+                    <button type="submit">Update student</button>
+                     {{#if message}}
+                            <p style="color:red;">{{message}}</p>
+                     {{/if}}
+
+
+              </form>
+                   
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
+
+

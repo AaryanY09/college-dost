@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alumni Dashboard</title>
+    <link rel="stylesheet" href="/css/alumnidash.css">
+</head>
+<body>
+
+<div id="main">
+
+   
+    <div id="header">
+        <div class="logo">CollegeDost</div>
+                <h3>Alumni dashboard</h3>
+        <ul class="navbar">
+            
+        
+            <li><a href="aluprofile">Profile</a></li>
+            <li><a href="/alumni/logout" class="btn">Logout</a></li>
+        </ul>
+    </div>
+
+   
+    <div id="fakeheader"></div>
+
+   
+    <div id="hero">
+        <div class="welcome">
+            <h1>Hello, {{alumni.name}} 👋</h1>
+            <p>Your journey to success starts here 🚀</p>
+        </div>
+    </div>
+
+   
+    <div id="cards">
+
+        <div class="card">
+            <h3>📚 Share corporate culture</h3>
+            <p>Share non-technical corporate culture and human behaviour</p>
+            <img src="\images\roadmap.png" alt="">
+            {{!-- <button accesskey="">Explore</button> --}}
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <h3>📚 Share contents</h3>
+            <p>Share industrial contents/information/updates</p>
+            <img src="\images\corporate contents.png" alt="">
+            {{!-- <button accesskey="">Explore</button> --}}
+            <a href="#" class="btn">Share</a>
+        </div>
+
+        <div class="card">
+            <h3>Announcement🔉</h3>
+            <p>Announce about internships,job opportunities,etc.</p>
+            <img src="\images\announcements.png" alt="">
+            <a href="#" class="btn">Find</a>
+        </div>
+
+
+        <div class="card">
+            <h3>🌟 Alumni Spotlights</h3>
+            <p>Share your experience from college journey to corporate</p>
+            <img src="\images\spotlight.png" alt="">
+            <a href="#" class="btn">Spotlight</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

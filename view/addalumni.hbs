@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add student</title>
+    <link rel="stylesheet" href="/css/addalumni.css">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">LOGO</div>
+            <h2>Add alumni</h2>
+            <div class="box">
+                <a href="/admin/adminP" class="btn btn-secondary">Back to dashboard</a>
+             </div>
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+             <form action="/admin/addalumni" method="POST">
+                            <input name="prn" type="number"placeholder="PRN">
+                            <input name="name" placeholder="Enter name">
+                            <input name="company" placeholder="company name">
+                            <input name="passout_year" type="number" placeholder="Passout Year">
+                             <input name="password" placeholder="Password">
+                    <button type="submit">Add alumni</button>
+                     {{#if message}}
+                            <p style="color:red;">{{message}}</p>
+                     {{/if}}
+
+
+              </form>
+                   
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
+
+

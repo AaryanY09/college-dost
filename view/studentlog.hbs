@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT LOGIN</title>
+    <link rel="stylesheet" href="/css/studentlog.css">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">LOGO</div>
+            <h2>STUDENT LOGIN</h2>
+            <div class="box">
+                <a href="/login" class="btn btn-secondary">Back</a>
+            </div>
+
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+                <form action="/student/login" method="POST" target="_blank">
+                        <input name="prn" placeholder="Enter PRN">
+                        <input name="password" type="password" placeholder="Enter Password">
+                         <button type="submit">Login</button>
+                         {{#if message}}
+                            <p style="color:red;">{{message}}</p>
+                        {{/if}}
+                </form>
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>

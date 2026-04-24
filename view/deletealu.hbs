@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete alumni</title>
+    <link rel="stylesheet" href="/css/deletealu.css">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">LOGO</div>
+            <h2>Delete alumni</h2>
+            <div class="box">
+                <a href="/admin/adminP" class="btn btn-secondary">Back to dashboard</a>
+             </div>
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+             <form action="/admin/deletealu" method="POST">
+                            <input name="prn"  placeholder="PRN">
+                            <input name="name" placeholder="Name">
+                           
+                    <button type="submit">Delete alumni</button>
+                     {{#if message}}
+                            <p style="color:red;">{{message}}</p>
+                     {{/if}}
+
+
+              </form>
+                   
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
+
+

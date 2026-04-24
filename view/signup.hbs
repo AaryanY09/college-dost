@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">LOGO</div>
+            <h2>SIGN UP</h2>
+            <div class="box">
+                    <a href="/login" class="btn btn-secondary">Back</a>
+            </div>
+
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+             <form action="/student/signup" method="POST">
+                            <input name="prn" placeholder="PRN">
+                            <input name="name" placeholder="Name">
+                            <input name="year" placeholder="Studying Year (Enter in number(eg,1,2,3,4))">
+                            <input name="division" placeholder="Division">
+                            <input name="password" placeholder="Password">
+                    <button type="submit">Signup</button>
+                     {{#if message}}
+                            <p style="color:red;">{{message}}</p>
+                     {{/if}}
+
+                     <a href="/student/studentlog" class="btn">Student Login</a>  
+              </form>
+                   
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>

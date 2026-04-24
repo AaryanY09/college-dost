@@ -1,0 +1,131 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+}
+
+#main{
+    /* background: linear-gradient(to right, #5b5bff, #ff63c4); */
+    background-color: aliceblue;
+    height:100%;
+    width:100%;
+}
+
+
+#header{
+    height:15%;
+    width:100%;
+    background-color:#5b5bff;
+    position: fixed;
+    z-index: 100;
+    display:flex;
+    align-items:center;
+    justify-content: space-between; 
+}
+
+h2{
+   margin:auto
+}
+
+#fakeheader{
+    height:15%;
+    width:100%;
+    background-color: aliceblue;
+    
+}
+
+#page{
+    height:85%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    
+}
+
+
+
+
+
+
+form {
+    background: rgba(0, 0, 0, 0.4);/* glass effect */
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+form input {
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+
+
+form input:focus {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px rgba(91, 91, 255, 0.6);
+}
+
+
+form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #5b5bff, #ff63c4);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+form button:active {
+    transform: scale(0.97);
+}
+
+a{
+    background: linear-gradient(to right, #5b5bff, #ff63c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;    /* Removes the underline */
+    font-family: inherit;     /* Forces the font to match the rest of the form */
+    border: none;
+}
+
+a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+

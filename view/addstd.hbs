@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add student</title>
+    <link rel="stylesheet" href="/css/addstd.css">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">LOGO</div>
+            <h2>Add student</h2>
+            <div class="box">
+                <a href="/admin/adminP" class="btn btn-secondary">Back to dashboard</a>
+             </div>
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+             <form action="/admin/addstd" method="POST">
+                            <input name="prn" placeholder="PRN">
+                            <input name="name" placeholder="Name">
+                            <input name="year" placeholder="Studying Year (Enter in number(eg,1,2,3,4))">
+                            <input name="division" placeholder="Division">
+                            {{!-- <input name="password" placeholder="Password"> --}}
+                    <button type="submit">Add student</button>
+                     {{#if message}}
+                            <p style="color:red;">{{message}}</p>
+                     {{/if}}
+
+
+              </form>
+                   
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
+
+

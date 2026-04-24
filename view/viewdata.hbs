@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Students</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/viewdata.css">
+</head>
+<body>
+
+<!-- Modal -->
+    <div class="modal-content custom-modal">
+           <div class="modal-footer">
+                <a href="/admin/adminP" class="btn btn-secondary">Back to dashboard</a>
+           </div>
+
+      <!-- Header -->
+      <div class="modal-header">
+         
+          <select id="searchYear" class="form-control" onchange="filterTable()">
+            <option value="">All Years</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+          </select>
+
+          <input 
+              type="text"             
+              id="searchText" 
+              class="form-control mb-3" 
+              placeholder="Search by Name or PRN"
+              onkeyup="filterTable()">
+        
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+
+        <table class="table table-hover table-bordered text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th>PRN</th>
+              <th>Name</th>
+              <th>Year</th>
+              <th>Division</th>
+              <th>Password</th>             
+            </tr>
+          </thead>
+
+          <tbody>
+            {{#each data}}
+            <tr>
+              <td>{{prn}}</td>
+              <td>{{name}}</td>
+              <td>{{year}}</td>
+              <td>{{division}}</td>
+              <td>{{password}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+
+        </table>
+
+      </div>
+
+     
+
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  $("#studentModal").modal("show");
+</script>
+
+
+<script src="/js/viewdata.js"></script>
+</body>
+</html>
