@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Content Board</title>
+    <link rel="stylesheet" href="/css/spotlightAlu.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2 class="title">Alumni Control Center</h2>
+    <a href="/alumni/alumnidash" class="back-btn">← Dashboard</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<div class="layout">
+
+    <!-- LEFT: CREATE POST -->
+    <div class="left-panel">
+        <div class="glass-box">
+            <h3>📢 Create Spotlight</h3>
+            <form id="spotlightForm" action="/spotlight/post" method="POST" enctype="multipart/form-data">
+                <input type="text" name="title" placeholder="Enter title" required>
+                
+                <div class="textarea-container">
+                    <textarea id="messageArea" name="message" placeholder="Write your message..." required></textarea>
+                    <span id="charCount" class="char-count">0 characters</span>
+                </div>
+
+                <div class="file-upload-wrapper">
+                    <label for="fileInput" class="custom-file-btn">📁 Choose Attachment</label>
+                    <input type="file" name="file" id="fileInput">
+                    <span id="fileName" class="file-name">No file selected</span>
+                </div>
+
+                <button type="submit" id="submitBtn">Post Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- RIGHT: FEED -->
+    <div class="right-panel" id="feedPanel">
+        {{#each spotlights}}
+        <div class="card">
+            <div class="card-top">
+                <h3>{{this.title}}</h3>
+                <span class="time">{{this.created_at}}</span>
+            </div>
+
+            <!-- This class now preserves formatting -->
+            <p class="desc formatted-text">{{this.message}}</p>
+
+            <div class="meta">
+                <span>👨‍🏫 {{this.alumni_name}}</span>
+            </div>
+
+            <div class="card-actions">
+                {{#if this.file_url}}
+                <a href="{{this.file_url}}" class="btn green" download>
+                    Download File
+                </a>
+                {{/if}}
+                <a href="/spotlight/delete/{{this.spotlight_id}}" class="btn red delete-action">
+                    Delete
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script src="/js/spotlightAlu.js"></script>
+</body>
+</html>

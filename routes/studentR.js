@@ -103,4 +103,6 @@ router.get("/contact",(req,res)=>{
 router.post("/contact",studentC.contact);
 
 
+router.get("/topMentors", studentC.topMentors);
+
 module.exports=router;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,5 +34,64 @@
     </div>
 
     
+</body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENTOR LOG IN</title>
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/mentorlog.css">
+</head>
+<body>
+    <!-- Smoothly drifting structural background shapes -->
+    <div class="bg-circle circle-one"></div>
+    <div class="bg-circle circle-two"></div>
+
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">MENTOR<span>PORTAL</span></div>
+            <h2 class="static-title">MENTOR LOGIN</h2>
+            <div class="box">
+                <a href="/login" class="back-link">Back</a>
+            </div>
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <div id="page">
+            <form action="/mentor/mentorlog" method="POST" target="_blank" id="mentorLoginForm">
+                <div class="form-header">
+                    <h3>Welcome Back</h3>
+                    <p>Access your mentor workspace</p>
+                </div>
+
+                <div class="input-group">
+                    <input name="prn" type="text" placeholder="Enter PRN" required autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <input name="password" type="password" placeholder="Enter Password" required>
+                </div>
+
+                <button type="submit" class="ripple-btn">Login</button>
+
+                {{#if message}}
+                    <div class="error-container">
+                        <p class="error-msg">{{message}}</p>
+                    </div>
+                {{/if}}
+            </form>
+        </div>
+        
+    </div>
+
+    <!-- Client Interactive JS -->
+    <script src="/js/mentorlog.js"></script>
 </body>
 </html>

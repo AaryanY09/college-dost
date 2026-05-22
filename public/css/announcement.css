@@ -1,0 +1,100 @@
+body { font-family: Arial; background: #f5f5f5; }
+
+header {
+    background: linear-gradient(to right, #6a5acd, #7b68ee);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.announcement-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.message {
+    background: #6a5acd;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+/*
+.input-area {
+    display: flex;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: white;
+    border-radius: 10px;
+}
+    */
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:white;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 10px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    gap: 10px; /* space between input & button */
+}
+
+/* Input takes remaining space */
+.input {
+    flex: 1;                  /* 🔥 key: fills remaining width */
+    padding: 10px;
+    border-radius: 20px;      /* rounded corners */
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Button fixed size */
+.post-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    background: green;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;      /* prevents text wrapping */
+}
+
+.post-btn:hover {
+    background: darkgreen;
+}
+
+.back-btn {
+    background: green;              /* initial color */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin-top: 10px;
+    display: block;
+    width: fit-content;             /* shrink to content */
+    margin-left: auto;              /* push to right */
+    border-radius: 20px;            /* more rounded */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.announcement-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 🔥 centers both ways */
+    margin: 0;
+}

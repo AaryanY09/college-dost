@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Roadmap Generator</title>
+    <link rel="stylesheet" href="/css/roadmap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="roadmap-body">
+
+<div id="main">
+    <!-- HEADER NAVIGATION -->
+    <div id="header">
+        <div class="logo">College Dost</div>
+        <h3>Roadmap Generator</h3>
+        <ul class="navbar">
+            <li><a href="/student/dashboard">Dashboard</a></li>
+        </ul>
+    </div>
+
+    <div id="fakeheader"></div>
+
+    <!-- MAIN GENERATOR CONTAINER -->
+    <div class="roadmap-container">
+        
+        <!-- SIDEBAR SELECTION PANEL -->
+        <aside class="roadmap-sidebar">
+            <div class="search-box">
+                <input type="text" id="domainSearch" placeholder="Search 20+ domains...">
+            </div>
+            <div class="domain-list" id="domainList">
+                <!-- Javascript will populate 15-20 placeholder options here -->
+            </div>
+        </aside>
+
+        <!-- DYNAMIC CONTENT WORKSPACE -->
+        <main class="roadmap-workspace" id="workspace">
+            <div class="empty-state-view" id="emptyState">
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Select Domain" class="hero-vector">
+                <h2>Select a Domain to Map Your Journey</h2>
+                <p>Pick one of our engineered paths on the sidebar to break down technologies across 6 semesters with handpicked resources and open-source project frameworks.</p>
+            </div>
+
+            <!-- ROADMAP VIEWER (Hidden by default) -->
+            <div class="roadmap-viewer hidden" id="roadmapViewer">
+                <div class="roadmap-header-card">
+                    <span class="badge" id="domainCategory">Software Engineering</span>
+                    <h1 id="selectedDomainTitle">Full Stack Developer</h1>
+                    <p id="selectedDomainDesc">Comprehensive path from foundational semantic layouts to real-time distributed web systems architecture.</p>
+                </div>
+
+                <!-- SEMESTER TRACKER TIMELINE STICKY BAR -->
+                <div class="semester-tabs-container">
+                    <div class="semester-tabs" id="semesterTabs">
+                        <button class="sem-tab active" data-sem="1">Sem 1</button>
+                        <button class="sem-tab" data-sem="2">Sem 2</button>
+                        <button class="sem-tab" data-sem="3">Sem 3</button>
+                        <button class="sem-tab" data-sem="4">Sem 4</button>
+                        <button class="sem-tab" data-sem="5">Sem 5</button>
+                        <button class="sem-tab" data-sem="6">Sem 6</button>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC SEMESTER PANEL CONTENT -->
+                <div class="semester-panel-content" id="semesterPanel">
+                    <!-- Dynamic rendering via DOM manipulation -->
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="/js/roadmap.js"></script>
+</body>
+</html>

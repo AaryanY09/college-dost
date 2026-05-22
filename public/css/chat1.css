@@ -1,0 +1,155 @@
+body { font-family: Arial; background: #f5f5f5; }
+
+header {
+    background: linear-gradient(to right, #6a5acd, #7b68ee);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-container {
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.chat-box {
+    height: 400px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.sent {
+    background: #6a5acd;
+    color: white;
+    margin-left: auto;
+}
+
+.received {
+    background: #ddd;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    padding: 15px 25px;
+    background: linear-gradient(to right, #6a5acd, #7b68ee);
+    color: white;
+}
+
+/* Logo (left) */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Center title */
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Back button (right) */
+.back-btn {
+    background: green;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: darkgreen;
+}
+
+/* Container */
+.chat-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+/* Chat box (messages area) */
+.chat-box {
+    background: #eaeaea;
+    height: 400px;
+    border-radius: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Common message style */
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 60%;
+    font-size: 14px;
+}
+
+/* Received (left side) */
+.received {
+    background: #d3d3d3;
+    align-self: flex-start;
+}
+
+/* Sent (right side - purple) */
+.sent {
+    background: #6a5acd;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+/* Input field */
+.chat-input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    background: #dcdcdc;
+    outline: none;
+}
+
+/* Send button */
+.send-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.send-btn:hover {
+    background: darkgreen;
+}

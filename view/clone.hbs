@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -152,7 +152,7 @@
                                 Department of CSBS, KIT's College of Engineering, Kolhapur.
                               </a>
                          </p>    
-                                 {{!-- rel="noopener noreferrer"  is better for security               --}}
+                                 
                          </div>
 
                     </div>     
@@ -168,4 +168,148 @@
 
 
 
- 
+  --}}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Dost</title>
+    <link rel="stylesheet" href="/css/clone.css">
+    <!-- GSAP & ScrollTrigger CDNs for smooth interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- Smooth Loading Screen Overlay -->
+    <div id="loader">
+        <div class="loader-content">
+            <span class="loader-logo">COLLEGE DOST</span>
+            <div class="loader-bar"><span></span></div>
+        </div>
+    </div>
+
+    <div id="main">
+        <!-- Main Navigation Bar -->
+        <div id="header">
+            <div class="logo">COLLEGE DOST</div>     
+            <ul class="navbar">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/AboutUs">ABOUT US</a></li>
+                <li><a href="/student/topMentors">TOP 50 MENTORS</a></li>
+                <li><a href="/student/contact">CONTACT SUPPORT</a></li>
+                <li><a href="/login" class="btn">LOGIN / SIGN UP</a></li>
+            </ul>
+        </div>
+
+        <!-- Spacer matching fixed header height to prevent content jumps -->
+        <div id="fakeheader"></div>
+
+        <!-- Page 1: Hero Section -->
+        <div id="page1">
+            <!-- Infinite Moving Tagline Marquee Container -->
+            <div class="marquee-container">
+                <div class="marquee-inner">
+                    <h2>BRIDGING THE GAP, BUILDING THE FUTURE. &nbsp;&nbsp;•&nbsp;&nbsp; BRIDGING THE GAP, BUILDING THE FUTURE. &nbsp;&nbsp;•&nbsp;&nbsp; </h2>
+                    <h2>BRIDGING THE GAP, BUILDING THE FUTURE. &nbsp;&nbsp;•&nbsp;&nbsp; BRIDGING THE GAP, BUILDING THE FUTURE. &nbsp;&nbsp;•&nbsp;&nbsp; </h2>
+                </div>
+            </div>
+
+            <section class="hero">
+                <div class="hero-text">
+                    <h1><span class="college">COLLEGE</span> <span class="dost">DOST</span></h1>
+                    <div class="glass">
+                        <p>Bridging the gap between Juniors and Seniors. Get career roadmaps, expert guidance, and mentor support — all in one place.</p>
+                    </div>
+                    <div class="hero-buttons">
+                       
+                        <a href="/student/signup" class="interactive-btn">Explore roadmaps</a>
+                         <a href="/student/signup" class="interactive-btn outline">Find a mentor</a>
+                      
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="/images/clone page.png" alt="Group working" />
+                </div>
+                
+                <a href="/AboutUs" class="learn-more">Learn More →</a>
+            </section>
+        </div>
+
+        <!-- Page 2: About & Features Section -->
+        <div id="page2">
+            <div id="about">
+                <h1 class="section-title">ABOUT</h1>
+                <div class="glass2 scroll-animate">
+                    <h3>Why College Dost?</h3>
+                    <p>Transitioning through engineering years can be tough. College Dost is a peer-to-peer mentoring platform designed specifically for KIT's College of Engineering. We empower 1st to 3rd-year students with knowledge from experienced 4th-year seniors and successful Alumni.</p>
+                </div>
+            </div>
+
+            <div id="features">
+                <h1 class="section-title">Features</h1>
+                <div class="glass3 scroll-animate">
+                    <ul class="feature-list">
+                        <li><strong>Feature 1: Interactive Roadmaps</strong><p>Get semester-wise technical and non-technical paths tailored for your specific branch.</p></li>
+                        <li><strong>Feature 2: One-to-One Peer Chat</strong><p>Connect directly with top-rated seniors to solve your academic or placement doubts.</p></li>
+                        <li><strong>Feature 3: Anonymous Buddy Chat</strong><p>Discuss personal or sensitive issues without revealing your identity. Your privacy is our priority.</p></li>
+                        <li><strong>Feature 4: Special Recognition</strong><p>Seniors earn special recognition from faculties for helping the community.</p></li>   
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Alumni Spotlight Banner -->
+        <div id="page3">
+            <div class="heading">
+                <h1 class="split-text">Alumni Spotlight</h1>
+            </div>
+            
+            <div class="middle">
+                <h2>Wisdom From Graduates</h2>
+                <p>Watch exclusive interviews and read blogs from our alumni <br> working at top tech companies like Cognizant, TCS, and Accenture.</p>
+                <a href="/student/signup" class="spotlight-btn">View All Spotlights</a>
+            </div>
+        </div>
+
+        <!-- Page 4: Dynamic Staggered Footer -->
+        <div id="page4">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <h1 class="footer-title">College Dost</h1>
+                    <a href="/Empower" class="footer-link">Empowering students through community learning</a> 
+                </div>
+
+                <div class="footer-box">
+                    <h1>Quick Links</h1>
+                    <ul>
+                        <li><a href="AboutUs">About Us</a></li>
+                        <li><a href="PrivacyP">Privacy Policy</a></li>
+                        <li><a href="Guidelines">Guidelines</a></li>
+                        <li><a href="/FAQ">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h1>Contact</h1>
+                    <p>
+                        <a href="https://www.kitcoek.in/best-cse-college-kolhapur-best-computer-science-business-systems" 
+                           target="_blank" 
+                           rel="noopener noreferrer" class="footer-link">
+                           Department of CSBS, KIT's College of Engineering, Kolhapur.
+                        </a>
+                    </p>    
+                </div>
+            </div>     
+        </div>
+    </div>
+
+    <script src="/js/clone.js"></script>
+</body>
+</html>

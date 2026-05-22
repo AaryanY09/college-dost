@@ -1,0 +1,48 @@
+/* Modal background */
+.custom-modal {
+  /* border-radius: 12px; */
+  overflow: hidden;
+  /* background: linear-gradient(to right, #5b5bff, #ff63c4); */
+  background-color:aliceblue;
+  /* color: white; */
+}
+
+/* Header */
+.modal-header {
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* Table */
+.table {
+  background: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table header */
+.thead-dark th {
+  background-color: #0f172a !important;
+  color: white;
+}
+
+/* Row hover */
+.table-hover tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 6px;
+}
+
+/* Footer */
+.modal-footer {
+  background: rgba(0,0,0,0.2);
+}
+
+body{
+    /* background-color:#ff63c4; */
+    background-color:aliceblue;
+}

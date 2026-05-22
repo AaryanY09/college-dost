@@ -1,0 +1,165 @@
+{{!-- <!DOCTYPE html>
+<html>
+<head>
+
+    <title>Student Announcement</title>
+
+    <link rel="stylesheet"
+    href="/css/studentAnnouncement.css">
+
+</head>
+
+<body>
+
+<div id="main">
+
+
+
+<header id="header">
+
+    <div class="logo">
+        CollegeDost
+    </div>
+
+    <h2>
+        Announcements
+    </h2>
+
+    <a href="/student/dashboard"
+    class="back-btn">
+        ← Back
+    </a>
+
+</header>
+
+
+
+<div id="fakeheader"></div>
+
+
+
+
+
+<div class="announcement-container">
+
+    {{#each announcements}}
+
+    <div class="announcement-card">
+
+        <h3>
+            {{this.title}}
+        </h3>
+
+        <p>
+            {{this.message}}
+        </p>
+
+        <small>
+
+            Posted by:
+            {{this.mentor_name}}
+
+            <br>
+
+            Date:
+            {{this.created_at}}
+
+        </small>
+
+
+        <br><br>
+
+        {{#if this.file_url}}
+
+        <a
+        href="{{this.file_url}}"
+        download
+        class="download-btn">
+
+            Download Attachment
+
+        </a>
+
+        {{/if}}
+
+    </div>
+
+    {{/each}}
+
+</div>
+
+
+</div>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/js/studentAnnouncement.js"></script>
+
+</body>
+</html> --}}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Announcement</title>
+    <!-- Modern high-end UI typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/studentAnnouncement.css">
+</head>
+<body>
+
+<div id="main">
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2>Announcements 📢</h2>
+    <a href="/student/dashboard" class="back-btn">← Back</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<main class="announcement-container" id="announcement-feed">
+    {{#each announcements}}
+    <div class="announcement-card" data-id="{{this.announcement_id}}">
+        <div class="card-inner">
+            <h3>{{this.title}}</h3>
+            <p>{{this.message}}</p>
+
+            <div class="meta-wrapper">
+                <small class="meta-item">
+                    <span class="icon">👤</span> Posted by: <strong>{{this.mentor_name}}</strong>
+                </small>
+                <small class="meta-item">
+                    <span class="icon">📅</span> Date: <span>{{this.created_at}}</span>
+                </small>
+            </div>
+
+            {{#if this.file_url}}
+            <div class="action-wrapper">
+                <a href="{{this.file_url}}" download class="download-btn">
+                    <span class="btn-icon">⬇</span> Download Attachment
+                </a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+</main>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/studentAnnouncement.js"></script>
+</body>
+</html>

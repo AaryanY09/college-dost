@@ -4,35 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDENT LOGIN</title>
+    <!-- Google Fonts for smooth typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/studentlog.css">
 </head>
 <body>
+    <!-- Animated background decorative elements -->
+    <div class="bg-circle circle-one"></div>
+    <div class="bg-circle circle-two"></div>
+
     <div id="main">
 
         <div id="header">
-            <div class="logo">LOGO</div>
-            <h2>STUDENT LOGIN</h2>
+            <div class="logo">STUDENT<span>PORTAL</span></div>
+            <h2 class="static-title">STUDENT LOGIN</h2>
             <div class="box">
                 <a href="/login" class="btn btn-secondary">Back</a>
             </div>
-
         </div>
 
         <div id="fakeheader"></div>
 
         <div id="page">
-                <form action="/student/login" method="POST" target="_blank">
-                        <input name="prn" placeholder="Enter PRN">
-                        <input name="password" type="password" placeholder="Enter Password">
-                         <button type="submit">Login</button>
-                         {{#if message}}
-                            <p style="color:red;">{{message}}</p>
-                        {{/if}}
-                </form>
+            <form action="/student/login" method="POST" target="_blank" id="loginForm">
+                <div class="form-header">
+                    <h3>Welcome Back</h3>
+                    <p>Please enter your credentials</p>
+                </div>
+
+                <div class="input-group">
+                    <input name="prn" type="text" placeholder="Enter PRN" required autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <input name="password" type="password" placeholder="Enter Password" required>
+                </div>
+
+                <button type="submit" class="ripple-btn">Login</button>
+
+                {{#if message}}
+                    <div class="error-container">
+                        <p class="error-msg">{{message}}</p>
+                    </div>
+                {{/if}}
+            </form>
         </div>
         
     </div>
 
-    
+    <!-- Interactive JS File -->
+    <script src="/js/studentlog.js"></script>
 </body>
 </html>

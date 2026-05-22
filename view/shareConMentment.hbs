@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mentor Content Board</title>
+    <link rel="stylesheet" href="/css/shareConMentment.css">
+</head>
+
+<body>
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2 class="title">Share Content with Students</h2>
+    <a href="/mentor/mentorDash" class="back-btn">← Dashboard</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<div class="layout">
+
+    <!-- LEFT: CREATE POST -->
+    <div class="left-panel">
+        <div class="glass-box animate-fade-in">
+            <h3>📢 Create Announcement</h3>
+
+            <form action="/shareConMent/post" method="POST" enctype="multipart/form-data">
+                <input type="text" name="title" placeholder="Enter title" required>
+                <textarea name="message" placeholder="Write your message..." required></textarea>
+                
+                <div class="file-upload-wrapper">
+                    <label for="file-input" class="file-label">📁 Choose File</label>
+                    <input type="file" name="file" id="file-input">
+                    <span id="file-name-preview">No file selected</span>
+                </div>
+
+                <button type="submit" class="submit-btn">Post Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- RIGHT: FEED -->
+    <div class="right-panel">
+        {{#each shareConMents}}
+        <div class="card animate-slide-up">
+            <div class="card-top">
+                <h3>{{this.title}}</h3>
+                <span class="time">⏱️ {{this.created_at}}</span>
+            </div>
+
+            <p class="desc">{{this.message}}</p>
+
+            <div class="card-footer">
+                <div class="meta">
+                    <span>👨‍🏫 {{this.mentor_name}}</span>
+                </div>
+
+                <div class="action-btns">
+                    {{#if this.file_url}}
+                    <a href="{{this.file_url}}" class="btn green" download>
+                        📥 Download File
+                    </a>
+                    {{/if}}
+
+                    <a href="/shareConMent/delete/{{this.shareConMent_id}}" class="btn red delete-btn">
+                        🗑️ Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<!-- Interactive JS File Link -->
+<script src="/js/shareConMentment.js"></script>
+</body>
+</html>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const fileInput = document.getElementById('file-input');
+    const namePreview = document.getElementById('file-name-preview');
+
+    if (fileInput && namePreview) {
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files.length > 0) {
+                const filename = this.files[0].name;
+                namePreview.textContent = filename.length > 25 
+                    ? filename.substring(0, 22) + '...' 
+                    : filename;
+                namePreview.style.color = "#22c55e"; 
+            } else {
+                namePreview.textContent = "No file selected";
+                namePreview.style.color = "#64748b";
+            }
+        });
+    }
+
+    // Keep your delete confirmation working too
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (confirm("Are you sure you want to permanently delete this announcement?")) {
+                window.location.href = button.getAttribute('href');
+            }
+        });
+    });
+});
+</script>

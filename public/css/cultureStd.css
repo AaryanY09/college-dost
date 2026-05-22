@@ -1,0 +1,193 @@
+/* Core Styling & Modern Font Family Overhaul */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #f8fafc; /* Ultra-clean, premium light gray canvas */
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* Premium White Fixed Navigation Header */
+#header {
+    height: 80px;
+    width: 100%;
+    background: #ffffff;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+#fakeheader {
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #2563eb; /* Clean digital blue corporate identity */
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Micro-moving Back Button */
+.back-btn {
+    background: #f1f5f9;
+    color: #334155;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-btn:hover {
+    background: #e2e8f0;
+    transform: translateX(-3px); /* Smooth movement back action pointer hint */
+}
+
+/* Centralized Feed Column */
+.content-container {
+    width: 100%;
+    max-width: 740px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Interactive Blocks with Hardware Accelerated Entry Movement */
+.content-card {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f1f5f9;
+    
+    /* Configured for programmatic entry reveal animations */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Active animation state modifier injection */
+.content-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Interactive Hover state micro-movement */
+.content-card:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.content-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0f172a;
+    line-height: 1.4;
+}
+
+/* FIX: Preserves custom user typography space maps, line-breaks, and paragraph indents */
+.content-message {
+    margin-bottom: 20px;
+    color: #334155;
+    line-height: 1.65;
+    font-size: 15px;
+    white-space: pre-wrap;       /* Critical fix: captures standard text breaks/spaces accurately */
+    word-wrap: break-word;       /* Guarantees structural layout boundary protection */
+}
+
+/* Horizontal Metadata Split */
+.content-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #64748b;
+    padding-top: 14px;
+    border-top: 1px dashed #e2e8f0;
+    margin-bottom: 16px;
+}
+
+.content-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Styled Actionable Asset Link Call-to-Action */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 11px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.08);
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Fallback Container Styling */
+.empty-state-box {
+    text-align: center;
+    padding: 50px 20px;
+    color: #64748b;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 2px dashed #e2e8f0;
+}
+
+/* Live Interactive Toast Feedback Architecture */
+#toast-wrapper {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.live-alert-toast {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 500;
+    animation: toastPopIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastPopIn {
+    from { transform: translateX(120%) scale(0.9); opacity: 0; }
+    to { transform: translateX(0) scale(1); opacity: 1; }
+}

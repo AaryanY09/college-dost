@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,5 +57,79 @@
             </div>
            
         </div>
+</body>
+</html> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Dost Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <!-- Smooth background floating shapes -->
+    <div class="animated-bg">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+    </div>
+
+    <div id="main">
+        <header id="header">
+            <div class="logo">College Dost</div>   
+            <h2>LOGIN / SIGN UP</h2>
+            <div class="box">
+                <a href="/" class="btn-home">Home</a>
+            </div>
+        </header>
+
+        <div id="fakeheader"></div>
+
+        <main id="page">
+            <div class="charts">
+                <!-- Student Card -->
+                <div id="student" class="card">
+                    <div class="img">
+                        <img src="/images/student.png" alt="Student">
+                    </div>
+                    <div class="stspace card-actions">
+                        <a href="/student/signup" class="btn btn-primary">Student Sign Up</a>
+                        <a href="/student/studentlog" class="btn btn-secondary">Student Login</a>                        
+                    </div>
+                </div>
+
+                <!-- Mentor Card -->
+                <div id="mentor" class="card">
+                    <div class="img">
+                        <img src="/images/mentor.png" alt="Mentor">
+                    </div>
+                    <div class="mtspace card-actions">
+                        <a href="/mentor/mentorlog" class="btn btn-primary">Mentor Login</a>
+                    </div>
+                </div>
+
+                <!-- Alumni Card -->
+                <div id="alumni" class="card">
+                    <div class="img">
+                        <img src="/images/alumni.png" alt="Alumni">
+                    </div>
+                    <div class="alspace card-actions">
+                        <a href="/alumni/alumnilog" class="btn btn-primary">Alumni Login</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="/admin/adminlog" class="btn1">Admin Login</a>
+        </main>
+    </div>
+
+    <!-- Interactive JS File Script Execution -->
+    <script src="/js/login.js"></script>
 </body>
 </html>

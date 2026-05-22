@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Shared culture to student</title>
+    <link rel="stylesheet" href="/css/cultureStd.css">
+</head>
+<body>
+
+<!-- Real-time action notification layer -->
+<div id="toast-wrapper"></div>
+
+<div id="main">
+
+    <header id="header">
+        <div class="logo">CollegeDost</div>
+        <h2>Shared culture 🏛️</h2>
+        <a href="/student/dashboard" class="back-btn">← Back</a>
+    </header>
+
+    <div id="fakeheader"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="content-container" id="content-container">
+        {{#each culture}}
+        <div class="content-card">
+            <!-- TITLE -->
+            <h3 class="content-title">📌 {{this.title}}</h3>
+
+            <!-- DESCRIPTION (Formatting preserved via pre-wrap CSS) -->
+            <p class="content-message">{{this.message}}</p>
+
+            <!-- META INFO -->
+            <div class="content-meta">
+                <span>👨‍🏫 {{this.alumni_name}}</span>
+                <span class="date-stamp">📅 {{this.created_at}}</span>
+            </div>
+
+            <!-- FILE SECTION -->
+            {{#if this.file_url}}
+            <div class="file-section">
+                <a href="{{this.file_url}}" download class="download-btn">
+                    ⬇ Download Resource
+                </a>
+            </div>
+            {{/if}}
+        </div>
+        {{else}}
+        <!-- Fallback empty container layout -->
+        <div class="empty-state-box">
+            <p>No culture updates or stories shared yet. Check back soon!</p>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/cultureStd.js"></script>
+</body>
+</html>

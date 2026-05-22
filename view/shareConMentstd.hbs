@@ -1,0 +1,158 @@
+ {{!-- <!DOCTYPE html>
+<html>
+<head>
+
+    <title>Student Share Content</title>
+
+    <link rel="stylesheet"
+    href="/css/shareConMentstd.css">
+
+</head>
+
+<body>
+
+<div id="main">
+
+<header id="header">
+
+    <div class="logo">
+        CollegeDost
+    </div>
+
+    <h2>
+        Shared Learning Resources 📚
+    </h2>
+
+    <a href="/student/dashboard"
+    class="back-btn">
+        ← Back
+    </a>
+
+</header>
+
+<div id="fakeheader"></div>
+
+<!-- MAIN CONTENT AREA -->
+<div class="content-container">
+
+    {{#each shareConMents}}
+
+    <div class="content-card">
+
+        <!-- TITLE -->
+        <h3 class="content-title">
+            📌 {{this.title}}
+        </h3>
+
+        <!-- DESCRIPTION -->
+        <p class="content-message">
+            {{this.message}}
+        </p>
+
+        <!-- META INFO -->
+        <div class="content-meta">
+
+            <span>👨‍🏫 {{this.mentor_name}}</span>
+
+            <span>📅 {{this.created_at}}</span>
+
+        </div>
+
+        <!-- FILE SECTION -->
+        {{#if this.file_url}}
+
+        <div class="file-section">
+
+            <a href="{{this.file_url}}"
+               download
+               class="download-btn">
+
+                ⬇ Download Resource
+
+            </a>
+
+        </div>
+
+        {{/if}}
+
+    </div>
+
+    {{/each}}
+
+</div>
+
+</div>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/shareConMentstd.js"></script>
+
+</body>
+</html> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Share Content</title>
+    <!-- Importing modern crisp dashboard typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shareConMentstd.css">
+</head>
+<body>
+
+<div id="main">
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2>Shared Learning Resources 📚</h2>
+    <a href="/student/dashboard" class="back-btn">← Back</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<!-- MAIN CONTENT AREA -->
+<main class="content-container" id="resources-feed">
+    {{#each shareConMents}}
+    <div class="content-card" data-id="{{this.id}}">
+        <div class="card-inner">
+            <!-- TITLE -->
+            <h3 class="content-title">
+                <span class="pin-icon">📌</span> {{this.title}}
+            </h3>
+
+            <!-- DESCRIPTION -->
+            <p class="content-message">{{this.message}}</p>
+
+            <!-- META INFO -->
+            <div class="content-meta">
+                <span class="meta-item mentor">👨‍🏫 {{this.mentor_name}}</span>
+                <span class="meta-item date">📅 {{this.created_at}}</span>
+            </div>
+
+            <!-- FILE SECTION -->
+            {{#if this.file_url}}
+            <div class="file-section">
+                <a href="{{this.file_url}}" download class="download-btn">
+                    <span class="btn-icon">⬇</span> Download Resource
+                </a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+</main>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/shareConMentstd.js"></script>
+</body>
+</html>

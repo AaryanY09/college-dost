@@ -1,30 +1,33 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Dashboard</title>
     <link rel="stylesheet" href="/css/alumnidash.css">
+    <!-- Premium Inter Google font setup -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="main">
 
-   
+    <!-- Header Navigation Section -->
     <div id="header">
         <div class="logo">CollegeDost</div>
-                <h3>Alumni dashboard</h3>
+        <h3>Alumni Dashboard</h3>
         <ul class="navbar">
-            
-        
-            <li><a href="aluprofile">Profile</a></li>
-            <li><a href="/alumni/logout" class="btn">Logout</a></li>
+            <li><a href="aluprofile" class="nav-link">Profile</a></li>
+            <li><a href="/alumni/logout" class="btn-logout">Logout</a></li>
         </ul>
     </div>
 
-   
+    <!-- Layout spacer matching fixed header height -->
     <div id="fakeheader"></div>
 
-   
+    <!-- Hero Greeting Segment -->
     <div id="hero">
         <div class="welcome">
             <h1>Hello, {{alumni.name}} 👋</h1>
@@ -32,43 +35,47 @@
         </div>
     </div>
 
-   
+    <!-- Main Grid Operations Workspace -->
     <div id="cards">
 
         <div class="card">
-            <h3>📚 Share corporate culture</h3>
-            <p>Share non-technical corporate culture and human behaviour</p>
-            <img src="\images\roadmap.png" alt="">
-            {{!-- <button accesskey="">Explore</button> --}}
-            <a href="#" class="btn">Explore</a>
+            <div class="card-content">
+                <h3>📚 Share Corporate Culture</h3>
+                <p>Share non-technical corporate culture and human behavior</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/mentor.png" alt="Corporate Culture Illustration">
+            </div>
+            <a href="/culture/alumni" class="btn-action">Share</a>
         </div>
 
         <div class="card">
-            <h3>📚 Share contents</h3>
-            <p>Share industrial contents/information/updates</p>
-            <img src="\images\corporate contents.png" alt="">
-            {{!-- <button accesskey="">Explore</button> --}}
-            <a href="#" class="btn">Share</a>
+            <div class="card-content">
+                <h3>📚 Share Contents</h3>
+                <p>Share industrial contents, professional information, and ecosystem updates</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/corporate contents.png" alt="Share Content Illustration">
+            </div>
+            <a href="/shareConAlu/alumni" class="btn-action">Share</a>
         </div>
 
         <div class="card">
-            <h3>Announcement🔉</h3>
-            <p>Announce about internships,job opportunities,etc.</p>
-            <img src="\images\announcements.png" alt="">
-            <a href="#" class="btn">Find</a>
-        </div>
-
-
-        <div class="card">
-            <h3>🌟 Alumni Spotlights</h3>
-            <p>Share your experience from college journey to corporate</p>
-            <img src="\images\spotlight.png" alt="">
-            <a href="#" class="btn">Spotlight</a>
+            <div class="card-content">
+                <h3>🌟 Alumni Spotlights</h3>
+                <p>Share your direct experiences from college journey to corporate milestones</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/spotlight.png" alt="Alumni Spotlights Illustration">
+            </div>
+            <a href="/spotlight/alumni" class="btn-action">Share Spotlight</a>
         </div>
 
     </div>
 
 </div>
 
+<!-- Injected layout script handling entrance transitions and parallax effects -->
+<script src="/js/alumnidash.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,4 +67,95 @@
 </html>
 
 
+ --}}
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/contact.css">
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <!-- Custom Interactive JS -->
+    <script src="/js/contact.js" defer></script>
+</head>
+<body>
+
+<div id="main">
+
+    <!-- Header Navigation -->
+    <div id="header">
+        <div class="logo">College Dost</div>
+        <ul class="navbar">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/AboutUs">ABOUT</a></li>
+            <li><a href="/login" class="btn">LOGIN</a></li>
+        </ul>
+    </div>
+
+    <div id="fakeheader"></div>
+
+    <!-- Main Dynamic Container -->
+    <div id="page1">
+        <div class="heading-area animate-fade">
+            <h1>Contact Support</h1>
+            <h3>Need help or have any questions?</h3>
+        </div>
+
+        <!-- Split Layout Wrapper -->
+        <div class="content-wrapper">
+            
+            <!-- Left Moving Info Block -->
+            <div class="contact-info info-card animate-left">
+                <p class="intro-text">
+                    We’re here to assist you! If you face any issues while using College Dost or need guidance, feel free to reach out.
+                </p>
+
+                <ul class="details-list">
+                    <li><span class="icon">📧</span> <div class="text"><strong>Email:</strong> support@collegedost.com</div></li>
+                    <li><span class="icon">📍</span> <div class="text"><strong>Location:</strong> Department of CSBS, KIT’s College of Engineering, Kolhapur</div></li>
+                    <li><span class="icon">🕒</span> <div class="text"><strong>Support Hours:</strong> 9:00 AM – 4:30 PM (Tue – Sat)</div></li>
+                </ul>
+
+                <p class="footer-note">You can also use the platform’s chat feature to connect with mentors for quick help.</p>
+                <p class="footer-noteHighlight">We aim to respond to all queries as soon as possible.</p>
+            </div>
+
+            <!-- Right Moving Form Block -->
+            <form action="/student/contact" method="POST" class="animate-right interactive-form">
+                <h2>Send a Message</h2>
+                
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="input-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <span class="bar"></span>
+                </div>
+
+                <button type="submit">Send Message</button>
+
+                {{#if message}}
+                    <div class="form-response-msg">{{message}}</div>
+                {{/if}}
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

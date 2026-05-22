@@ -3,55 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGN UP</title>
-    <link rel="stylesheet" href="/css/stdprofile.css">
+    <title>My Profile | College Dost</title>
+    <link rel="stylesheet" href="/css/aluprofile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="main">
 
         <div id="header">
-            <div class="logo">LOGO</div>
-            <h2>MY Profile</h2>
+            <div class="logo">College Dost</div>
+            <h2>My Profile</h2>
             <div class="box">
-                    <a href="/alumni/alumnidash" class="btn btn-secondary">Back</a>
+                <a href="/alumni/alumnidash" class="btn-back">Back</a>
             </div>
-
         </div>
 
         <div id="fakeheader"></div>
 
         <div id="page">
-             {{!-- <form action="/student/signup" method="POST">
-                            <input name="prn" placeholder="PRN">
-                            <input name="name" placeholder="Name">
-                            <input name="year" placeholder="Studying Year (Enter in number(eg,1,2,3,4))">
-                            <input name="division" placeholder="Division">
-                            <input name="password" placeholder="Password">
-                    <button type="submit">Signup</button>
-                     {{#if message}}
-                            <p style="color:red;">{{message}}</p>
-                     {{/if}}
+            <div id="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-badge" data-initial="{{alumni.name}}"></div>
+                    <h3>{{alumni.name}}</h3>
+                    <p class="profile-subtitle">Verified Alumni Member</p>
+                </div>
 
-                     <a href="/student/studentlog" class="btn">Student Login</a>  
-              </form> --}}
-
-              <div id="box">
-                <ul>
-
-                    <li>PRN: {{alumni.prn}}</li>
-                    <li>Name: {{alumni.name}}</li>
-                    <li>Company: {{alumni.company}}</li>
-                    <li>Passout Year: {{alumni.passout_year}}</li>
-                    <li>Password: {{alumni.password}}</li>
-
-                </ul>
-                
-              </div>
-                   
+                <div class="profile-details">
+                    <div class="detail-row">
+                        <span class="detail-label">PRN Number</span>
+                        <span class="detail-value">{{alumni.prn}}</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Current Company</span>
+                        <span class="detail-value highlight-text">💼 {{alumni.company}}</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Passout Year</span>
+                        <span class="detail-value">{{alumni.passout_year}}</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Account Password</span>
+                        <div class="password-wrapper">
+                            <span class="detail-value password-field obscured" id="pwd-text" data-raw-password="{{alumni.password}}">••••••••</span>
+                            <button type="button" id="toggle-pwd-btn" class="btn-toggle-view">Show</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
 
-    
+    <script src="/js/aluprofile.js"></script>
 </body>
 </html>

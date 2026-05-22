@@ -1,0 +1,67 @@
+PROBLEM STATEMENT:
+our miniproject name is college dost,in this project,we are covering problems of students.
+When students come in 1zst year they dont know how engineering is,how exams are conducted,what is pattern of exams,what is college clubs,how are the engineering faculties,what roadmap should have to follow for making a successful career,which materials will be required to rech at our goal,how company hires students,what things required to do for getting oncampus placement,some students also have fear of reaching to the teacher/faculty,some students hesitate to ask question/doubts.some students have very personal doubts but they wanted to gain solution by hiding their name.lot of students doesn't get proper direction for learning softskills and hardskillls,students dont know what is going in industry and dont get proper updated skils to learn,due to that they learns outdated syllabus which is not any use in furture .Some students came from village or long distance ,they have their own physical and mental problems,To solve all this questions and similar like this questions our app college dost is made.
+This provides solution of each and every questions.
+Give me structured problem statement for our miniproject by refering this requirement for presentation  
+
+
+
+
+
+MAIN FEATURES:
+first of all our project is made by languages hbs,css,js for frontend and nodejs,express,socketio,mysql  for backend.We used node.js server i.e, we are running project on localhost 5000 in our computer only and then we will deploy it on Railway and github.So these languages provides simplicity for building our project having having lot of modules and database.
+
+1.Authontication module:
+There are 3 main pilers in our miniproject:student,mentor,alumni admin(faculty) is present but not fully involved.
+Admin have rights of only adding,update,delete and viewing students.They are not allowed to enter in website/app,bcz this app iis for students/mentors/alumni but app is semiformal.To avoid any misbehaviour of anyone,admin will able to control all these 4 operations.
+Student can 1st sign up and then login into website by their unique prn and password.Student out of college prn will not able to allowed in our website.We are working to improve this security on backend.
+Only top 50 mentors will be selected by admin(staffs) depeneding on their past hardskills,softskills,etc quantities by faculty.Only admin have to right about adding top 50 mentor according selected manually.So mentor have the option of login only instead of sign up.
+Similarly alumnies which are selected by admin will be also able to login only instead of signing up.
+Alumnies will remain in software for 2 years after passing out.
+
+2.Mentor support:
+There will be fully support from mentor side to students who are facing difficulties.According to how much contents share mentor to student and how much questions mentors have solved of students,according to that qudo points will be distributed to mentors.So mentors will be able to paste their profile in linkden showing their leadership,softskills amd hardkills.I will describe about it in in next upcoming slide deeply
+
+3.Chat and anonymous chat system:
+This is unique feature build by socketio technology.Thiis feature will help to making communication between studenst and mentors(one to one encrypted chat).In chats students can ask doubts (academic or non academic)(healthy discussion will be happen) and in anonymous chat feature students will be able to chat with mentors by hiding their names.Names of student will not visible to mentors.but name of mentors will be visible to student.This is our projects unique feature.And glad to share that had build successfully and become proper workable.
+
+4.Alumni guidance and spotlight:
+Alumni will able to share their industrial experience that may be technical,non-technical() and various office cultural and practical like office politics.(things are genuinely happening in workplaces,so haw to remain safe from all theses things).This module/feature will nyaneshwar explain deeply.
+
+5.Roadmap generator according to our niche:
+This feature asks domain and shows roadmap semwise according to our selected domain.eg if we selected web development domain then roadmap will what are the minimu technonlogies will student have to leatn to reach their goal.What are technologies have to learn them semwise.This feature also shows various career direction sthat software engineers have and in world of ai what are the skills align with ai needed to learn to get a good job.
+
+6.Kudo points to mentor:
+As told earlier this feature will help mentor to add value in their resume.More the qudo point smore the value of that cantdidate/mentor in the placement drives.
+
+7.Admin dashboard:
+Mentioned earlier
+
+This all information about main features of four system,now give structured presentation in simple words and corrected grammatical mistake and by adding an information where that point actuall belong sfrom that 7 points
+
+
+
+
+MENTOR DASHBOARD:
+In mentor dashboard there are 6 to 7 features.
+Share content:
+Mentors are allowed to share technical/non-technical content to the students.The share different new technologies,book,courses,different pdfs,etc technical content and various non technical content like content about maintaining our physical and mental health,how to increase our soft skills,etc.,contents they will able to share through this module.
+
+Announcement:Mentors are able to announce any technical/non-technical activities,events,workshops in college and also from various outside college,internship and job requirement and opportunities .,etc.through which students will get lot of opportunities to apply their skills.
+
+Chat module:This module is designed for solving doubts of 1st to 3rd year students by chatting.By this activity mentors(4rth year student) will able to increase their kudo points.Due to this also help of 1st year student will going to happen.
+
+Anonymous chat module:Through this module,mentors will have to solve answers of sensitive studets personal questions and this module will get higher kudo points to mentors.Because this module involves critical and very private data shared from any xyz student and have to give solution very properly.
+
+Alumni spotlight:In this mentors will able to see all posts/blogs of alumni that have shred by successful alumni.Alumnis college journey and how had they reached at that position will going to described in this.Mentors will only able to see these things.Noone student and mentor will able to chat directly with alumni.
+
+
+
+
+
+
+ 
+
+
+
+

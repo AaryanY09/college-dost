@@ -1,140 +1,249 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
-    width:100%;
-    font-family: Arial, sans-serif;
+html, body {
+    width: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Clean modern font upgrade */
+    background-color: #f8fafc;
+    color: #1e293b;
+    overflow-x: hidden;
 }
 
-#main{
-    min-height:100vh;
-    /* background: linear-gradient(to right, #5b5bff, #ff63c4); */
-    background-color:white ;
+#main {
+    min-height: 100vh;
+    background-color: #f8fafc; /* Crisp clean modern white offset background */
 }
 
-
-#header{
-    height:70px;
-    width:100%;
-    background:#0f172a;
+/* Header Adjustments */
+#header {
+    height: 70px;
+    width: 100%;
+    background: #0f172a;
     position: fixed;
-    top:0;
-    z-index:100;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 40px;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
-    color:white;
-    font-size:22px;
-    font-weight:bold;
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-
-.navbar{
-    display:flex;
-    list-style:none;
+.navbar {
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 
-.navbar li{
-    margin:0 15px;
+.navbar li {
+    margin: 0 15px;
 }
 
-.navbar a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+.navbar a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.navbar a:hover{
-    color:#38bdf8;
+.navbar a:hover {
+    color: #ffffff;
 }
 
-.btn{
-    background: linear-gradient(to right, #5b5bff, #ff63c4);
-    padding:6px 12px;
-    border-radius:6px;
+.btn {
+    background: linear-gradient(135deg, #5b5bff, #ff63c4);
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(91, 91, 255, 0.3);
 }
 
-#fakeheader{
-    height:70px;
+#fakeheader {
+    height: 70px;
 }
 
-#page1{
-    padding:40px 20px;
-    text-align:center;
+/* Container Layout */
+#page1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
 
-#page1 h1{
-    color:#0f172a;
-    margin-bottom:10px;
+.heading-area h1 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-weight: 800;
 }
 
-#page1 h3{
-    color:#0f172a;
-    margin-bottom:30px;
+.heading-area h3 {
+    color: #64748b;
+    margin-bottom: 50px;
+    font-weight: 400;
 }
 
-
-.contact-info{
-    max-width:600px;
-    margin:0 auto 30px auto;
-    color:black;
-    line-height:1.6;
+/* Two-column layout grid for high desktop aesthetics, collapses nicely on mobile */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
 }
 
-.contact-info ul{
-    margin:20px 0;
+@media (max-width: 850px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
-.contact-info li{
-    margin:10px 0;
+/* Left Card Stylings */
+.info-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    text-align: left;
 }
 
-form{
-    width:350px;
-    margin:20px auto;
-    padding:25px;
-    border-radius:12px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #334155;
+    margin-bottom: 25px;
 }
 
-
-input, textarea{
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    outline:none;
+.details-list {
+    list-style: none;
+    margin-bottom: 30px;
 }
 
-
-textarea{
-    resize:none;
-    height:100px;
+.details-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 1.05rem;
+    color: #475569;
 }
 
-button{
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background: linear-gradient(to right, #5b5bff, #ff63c4);
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+.details-list .icon {
+    font-size: 1.4rem;
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 12px;
+    line-height: 1;
 }
 
-button:hover{
-    transform:scale(1.05);
-    opacity:0.9;
+.details-list .text {
+    margin-top: 4px;
+}
+
+.footer-note {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-top: 15px;
+}
+
+.footer-noteHighlight {
+    font-size: 0.95rem;
+    color: #5b5bff;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Interactive Form Box Styling */
+form {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+
+form h2 {
+    font-size: 1.6rem;
+    color: #0f172a;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* Premium Form Inputs with bottom-line transition triggers */
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+    color: #0f172a;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    background: #ffffff;
+    border-color: #5b5bff;
+    box-shadow: 0 0 0 4px rgba(91, 91, 255, 0.15);
+}
+
+textarea {
+    resize: none;
+    height: 130px;
+}
+
+/* Upgraded Gradient Buttons */
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #5b5bff, #ff63c4);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(91, 91, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 12px 28px rgba(91, 91, 255, 0.4);
+}
+
+/* Dynamic backend server response feedback block */
+.form-response-msg {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: 500;
 }

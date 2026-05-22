@@ -1,0 +1,179 @@
+/* GLOBAL STYLES & RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* PREMIUM WHITE THEME HEADER */
+#header {
+    height: 80px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#fakeheader {
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: -0.5px;
+}
+
+#header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #475569;
+}
+
+/* INTERACTIVE BACK BUTTON */
+.back-btn {
+    background: #f1f5f9;
+    color: #334155;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: translateX(-3px);
+}
+
+/* CONTENT CONTAINER */
+.content-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* DYNAMIC CONTENT CARD */
+.content-card {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    opacity: 0; /* Managed by JS animation */
+    transform: translateY(20px); /* Managed by JS animation */
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.3s ease, 
+                border-color 0.3s ease;
+}
+
+/* Smooth float up effect on hover */
+.content-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: #cbd5e1;
+}
+
+.content-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pin-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover .pin-icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* CRITICAL FIX FOR SPACES AND LINE BREAKS */
+.content-message {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: pre-wrap;       /* Retains Enter breaks and consecutive spacing */
+    word-wrap: break-word;       /* Prevents long strings from breaking container limits */
+    word-break: break-word;
+}
+
+/* META INFORMATION */
+.content-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+    padding-top: 14px;
+    border-top: 1px dashed #e2e8f0;
+    margin-bottom: 16px;
+}
+
+.meta-item {
+    background: #f8fafc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.dl-icon {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.download-btn:hover .dl-icon {
+    transform: translateY(2px);
+}

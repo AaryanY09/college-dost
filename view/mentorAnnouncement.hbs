@@ -1,0 +1,86 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Announcement</title>
+    <!-- Importing modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/mentorAnnouncement.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2>Mentor Announcement Panel</h2>
+    <a href="/mentor/mentorDash" class="back-btn">← Back</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<div class="main-container">
+
+    <!-- Form Section -->
+    <div class="form-box-wrapper">
+        <div class="form-box">
+            <form action="/announcement/post" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="text" name="title" placeholder="Announcement title" required>
+                </div>
+
+                <div class="input-group">
+                    <textarea name="message" placeholder="Write announcement..." required></textarea>
+                </div>
+
+                <div class="file-upload-group">
+                    <label for="file-input" class="custom-file-btn">Choose Attachment</label>
+                    <input type="file" name="file" id="file-input">
+                    <span id="file-chosen">No file chosen</span>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Post Announcement</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Announcements Feed -->
+    <div class="announcement-container" id="announcement-feed">
+        {{#each announcements}}
+        <div class="announcement-card" data-id="{{this.announcement_id}}">
+            <div class="card-content">
+                <h3>{{this.title}}</h3>
+                <p>{{this.message}}</p>
+                
+                <div class="meta-info">
+                    <small>Posted by: <span>{{this.mentor_name}}</span></small>
+                    <small>Date: <span>{{this.created_at}}</span></small>
+                </div>
+
+                <div class="card-actions">
+                    {{#if this.file_url}}
+                    <a href="{{this.file_url}}" class="download-btn" download>
+                        Download Attachment
+                    </a>
+                    {{/if}}
+                    <a href="/announcement/delete/{{this.announcement_id}}" class="delete-btn">
+                        Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/mentorAnnouncement.js"></script>
+</body>
+</html>

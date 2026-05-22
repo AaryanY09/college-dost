@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,5 +34,70 @@
     </div>
 
     
+</body>
+</html> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Login | College Dost</title>
+    <link rel="stylesheet" href="/css/alumnilog.css">
+    <!-- Clean Inter Google font setup -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+
+        <!-- Header Navigation Bar -->
+        <div id="header">
+            <div class="logo">College Dost</div>
+            <h2>Alumni Login</h2>
+            <div class="box">
+                <a href="/login" class="btn-home">Home</a>
+            </div>
+        </div>
+
+        <!-- Layout gap buffer matching fixed header element heights -->
+        <div id="fakeheader"></div>
+
+        <!-- Form Interaction Container -->
+        <div id="page">
+            <div id="login-container">
+                <div class="login-header">
+                    <span class="icon-badge">🎓</span>
+                    <h3>Welcome Back</h3>
+                    <p>Connect with your institute ecosystem</p>
+                </div>
+
+                <form action="/alumni/alumnilog" method="POST" target="_blank" id="auth-form">
+                    <div class="input-group">
+                        <label class="field-label">PRN Number</label>
+                        <input type="text" name="prn" placeholder="Enter your PRN" required autocomplete="username">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label class="field-label">Password</label>
+                        <input type="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Sign In</button>
+
+                    {{#if message}}
+                        <div class="error-container">
+                            <p class="error-message">⚠️ {{message}}</p>
+                        </div>
+                    {{/if}}
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Script assets handling interactive shifts -->
+    <script src="/js/alumnilog.js"></script>
 </body>
 </html>

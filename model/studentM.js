@@ -72,5 +72,14 @@ const contact = (data,callback)=>{
 };
 
 
+const getAllMentors = (callback) => {
+    const sql = "SELECT * FROM mentor";
 
-module.exports = { signup,login,contact };
+    con.query(sql, (err, result) => {
+        if (err) return callback(err);
+        return callback(null, result);
+    });
+};
+
+
+module.exports = { signup,login,contact,getAllMentors };

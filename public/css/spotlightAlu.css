@@ -1,0 +1,323 @@
+/* RESET & CORE FONTS */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background: #f8fafc; /* Crisp, clean off-white canvas */
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+#header {
+    height: 70px;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    color: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+#fakeheader { 
+    height: 70px; 
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: #2563eb; /* Energetic professional blue accent */
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.back-btn {
+    background: #f1f5f9;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+/* LAYOUT STRUCTURE */
+.layout {
+    display: flex;
+    gap: 30px;
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+}
+
+/* LEFT PANEL (CREATE) */
+.left-panel {
+    width: 35%;
+    position: sticky;
+    top: 110px;
+    height: fit-content;
+}
+
+.glass-box {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.glass-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.glass-box input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.glass-box input[type="text"]:focus,
+.glass-box textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Textarea & Format Fix Container */
+.textarea-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.glass-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    resize: vertical;
+}
+
+.char-count {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+/* Interactive File Upload Area */
+.file-upload-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-upload-wrapper input[type="file"] {
+    display: none;
+}
+
+.custom-file-btn {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.custom-file-btn:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.file-name {
+    font-size: 12px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.file-name.file-selected {
+    color: #16a34a;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Primary Button */
+.glass-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.glass-box button:hover {
+    background: #1d4ed8;
+}
+
+.glass-box button:active {
+    transform: scale(0.98);
+}
+
+/* RIGHT PANEL (FEED) */
+.right-panel {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* REVOLUTIONARY FIX FOR LINE BREAKS AND SPACES */
+.formatted-text {
+    white-space: pre-wrap;       /* Crucial feature: Keeps line breaks and spaces */
+    word-wrap: break-word;       /* Prevents ultra long strings from escaping the card edge */
+    overflow-wrap: break-word;
+}
+
+/* THE CARD CONTAINER */
+.card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+}
+
+.card-top h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.time {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0 0 16px 0;
+}
+
+.meta {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    background: #f8fafc;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 14px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 14px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.green {
+    background: #e6f4ea;
+    color: #137333;
+}
+
+.green:hover {
+    background: #137333;
+    color: white;
+}
+
+.red {
+    background: #fce8e6;
+    color: #c5221f;
+}
+
+.red:hover {
+    background: #c5221f;
+    color: white;
+}
+
+/* Responsive optimization */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+        width: 95%;
+    }
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+    .left-panel {
+        position: static;
+    }
+}

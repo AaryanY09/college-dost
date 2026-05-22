@@ -87,6 +87,17 @@ exports.login = (req, res) => {
         req.session.user = user;    //Store user data in session memory
 
         // 🔥 Redirect to dashboard
+
+        req.session.user = {
+             prn: user.prn,
+             role: "student", // or mentor
+             name: user.name,
+             year: user.year,
+             division: user.division,
+             password: user.password
+        };
+
+      
         return res.redirect("/student/dashboard");
     });
 };
@@ -117,5 +128,16 @@ exports.contact = (req,res)=>{
 
 
 
+exports.topMentors = (req, res) => {
+    studentM.getAllMentors((err, result) => {
+        if (err) {
+            console.log(err);
+            return res.send("Error fetching data");
+        }
+
+        // send data to frontend
+        return res.render("topMentors", { data: result });
+    });
+};
 
 

@@ -17,9 +17,20 @@ exports.mentorlog = (req,res)=>{
        
         const mentor = result[0];
         req.session.mentor=mentor;
+
+        req.session.user = {
+            prn: mentor.prn,
+            role: "mentor",
+            name: mentor.name
+        };
+
         return res.redirect("/mentor/mentordash")
     })
 }
+
+
+
+
 
 
 // exports.mentprofile=(req,res)=>{

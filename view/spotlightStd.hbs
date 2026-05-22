@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Shared Content to student</title>
+    <link rel="stylesheet" href="/css/spotlightStd.css">
+</head>
+<body>
+
+<!-- Real-time dynamic notification toast container -->
+<div id="toast-container"></div>
+
+<div id="main">
+
+    <header id="header">
+        <div class="logo">CollegeDost</div>
+        <h2>Shared spotlight📚</h2>
+        <a href="/student/dashboard" class="back-btn">← Back</a>
+    </header>
+
+    <div id="fakeheader"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="content-container" id="content-container">
+        {{#each spotlights}}
+        <div class="content-card">
+            <!-- TITLE -->
+            <h3 class="content-title">📌 {{this.title}}</h3>
+
+            <!-- DESCRIPTION (Formatting preserved via CSS) -->
+            <p class="content-message">{{this.message}}</p>
+
+            <!-- META INFO -->
+            <div class="content-meta">
+                <span>👨‍🏫 {{this.alumni_name}}</span>
+                <span class="date-stamp">📅 {{this.created_at}}</span>
+            </div>
+
+            <!-- FILE SECTION -->
+            {{#if this.file_url}}
+            <div class="file-section">
+                <a href="{{this.file_url}}" download class="download-btn">
+                    ⬇ Download Resource
+                </a>
+            </div>
+            {{/if}}
+        </div>
+        {{else}}
+        <!-- Fallback if array is empty initially -->
+        <div class="no-content">
+            <p>No spotlights shared yet. Keep an eye out!</p>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/spotlightStd.js"></script>
+</body>
+</html>

@@ -1,7 +1,12 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
@@ -9,76 +14,107 @@
 
 <div id="main">
 
-   
+    <!-- HEADER NAVIGATION -->
     <div id="header">
-        <div class="logo">CollegeDost</div>
-                <h3>Student dashboard</h3>
+        <div class="logo">College Dost</div>
+        <h3>Student Dashboard</h3>
         <ul class="navbar">
             <li><a href="stdprofile">Profile</a></li>
-            <li><a href="/student/logout" class="btn">Logout</a></li>
+            <li><a href="/student/logout" class="btn-logout">Logout</a></li>
         </ul>
     </div>
 
-   
+    <!-- SPACING FIX FOR FIXED HEADER -->
     <div id="fakeheader"></div>
 
-   
-    <div id="hero">
+    <!-- HERO PROFILE BANNER -->
+    <div id="hero" class="reveal-item">
         <div class="welcome">
             <h1>Hello, {{user.name}} 👋</h1>
             <p>Your journey to success starts here 🚀</p>
         </div>
     </div>
 
-   
+    <!-- INTERACTIVE CARDS GRID -->
     <div id="cards">
 
-        <div class="card">
+        <div class="card reveal-item">
             <h3>📚 Explore Roadmaps</h3>
             <p>Semester-wise learning paths</p>
-            <img src="\images\roadmap.png" alt="">
-            {{!-- <button accesskey="">Explore</button> --}}
-            <a href="#" class="btn">Explore</a>
+            <div class="img-wrapper">
+                <img src="/images/roadmap.png" alt="Roadmaps">
+            </div>
+            <a href="/roadmap" class="btn">Explore</a>
         </div>
 
-        <div class="card">
-            <h3>Announcement🔉</h3>
-            <p>Announcement about events/internships,etc.</p>
-            <img src="\images\announcements.png" alt="">
-            <a href="#" class="btn">Find</a>
+        <div class="card reveal-item">
+            <h3>Announcement 🔉</h3>
+            <p>Announcement about events/internships, etc.</p>
+            <div class="img-wrapper">
+                <img src="/images/announcements.png" alt="Announcements">
+            </div>
+            <a href="/announcement/student" class="btn">Show</a>
         </div>
 
-        <div class="card">
-            <h3>👨‍🏫 Find a Mentor</h3>
-            <p>Top 50 mentors guidance</p>
-            <img src="\images\mentor in std dash.png" alt="">
-            <a href="#" class="btn">Find</a>
+        <div class="card reveal-item">
+            <h3>📚 Shared Content</h3>
+            <p>Share technical/non-technical contents/information</p>
+            <div class="img-wrapper">
+                <img src="/images/ment contents.png" alt="Shared Content">
+            </div>
+            <a href="/shareConMent/student" class="btn">Show</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal-item">
             <h3>💬 Chat</h3>
             <p>Talk with your mentor</p>
-            <img src="\images\chat std img.png" alt="">
-            <a href="#" class="btn">Chat</a>
+            <div class="img-wrapper">
+                <img src="/images/chat std img.png" alt="Chat">
+            </div>
+            <a href="/chats" class="btn">Chat</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal-item">
             <h3>🗨️ Anonymous Chat</h3>
             <p>Ask anything freely</p>
-            <img src="\images\anonymous.png" alt="">
-            <a href="#" class="btn">Anonymous chat</a>
+            <div class="img-wrapper">
+                <img src="/images/anonymous.png" alt="Anonymous Chat">
+            </div>
+            <a href="/achats" class="btn">Anonymous Chat</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal-item">
             <h3>🌟 Alumni Spotlights</h3>
             <p>Learn from real experiences</p>
-            <img src="\images\spotlight.png" alt="">
-            <a href="#" class="btn">Spotlight</a>
+            <div class="img-wrapper">
+                <img src="/images/spotlight.png" alt="Alumni Spotlights">
+            </div>
+            <a href="/spotlight/student" class="btn">Spotlight</a>
+        </div>
+
+        <div class="card reveal-item">
+            <h3>Corporate Culture</h3>
+            <p>Shared non-technical corporate culture and human behaviour</p>
+            <div class="img-wrapper">
+                <img src="/images/mentor.png" alt="Corporate Culture">
+            </div>
+            <a href="/culture/student" class="btn">Explore</a>
+        </div>
+
+        <div class="card reveal-item">
+            <h3>Contents from Alumni</h3>
+            <p>Shared industrial contents/information/updates</p>
+            <div class="img-wrapper">
+                <img src="/images/corporate contents.png" alt="Alumni Contents">
+            </div>
+            <a href="/shareConAlu/student" class="btn">Show</a>
         </div>
 
     </div>
 
 </div>
 
+<!-- Scripts placed at the bottom for guaranteed execution -->
+<script src="/js/dashboard.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <div id="main">
 
         <div id="header">
-            <div class="logo">LOGO</div>
+            <div class="logo">College Dost</div>
             <h2>MY Profile</h2>
             <div class="box">
                     <a href="/student/dashboard" class="btn btn-secondary">Back</a>
@@ -21,19 +21,6 @@
         <div id="fakeheader"></div>
 
         <div id="page">
-             {{!-- <form action="/student/signup" method="POST">
-                            <input name="prn" placeholder="PRN">
-                            <input name="name" placeholder="Name">
-                            <input name="year" placeholder="Studying Year (Enter in number(eg,1,2,3,4))">
-                            <input name="division" placeholder="Division">
-                            <input name="password" placeholder="Password">
-                    <button type="submit">Signup</button>
-                     {{#if message}}
-                            <p style="color:red;">{{message}}</p>
-                     {{/if}}
-
-                     <a href="/student/studentlog" class="btn">Student Login</a>  
-              </form> --}}
 
               <div id="box">
                 <ul>
@@ -53,5 +40,84 @@
     </div>
 
     
+</body>
+</html> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | College Dost</title>
+    <link rel="stylesheet" href="/css/stdprofile.css">
+    <!-- Added Google Fonts for a much cleaner layout -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+
+        <div id="header">
+            <div class="logo">College Dost</div>
+            <h2>My Profile</h2>
+            <div class="header-actions">
+                <a href="/student/dashboard" class="btn-back">Back to Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Correctly matches the fixed header height to prevent page clipping -->
+        <div id="fakeheader"></div>
+
+        <div id="page">
+            <div id="profile-container">
+                
+                <!-- Profile Header / Avatar Section -->
+                <div class="profile-avatar-section">
+                    <div class="avatar-placeholder">
+                        {{#if user.name}}
+                            <span id="avatar-initials"></span>
+                        {{else}}
+                            🎓
+                        {{/if}}
+                    </div>
+                    <h3 class="profile-display-name">{{user.name}}</h3>
+                    <span class="profile-tag">Student</span>
+                </div>
+
+                <!-- Profile Data Fields -->
+                <div class="profile-info-grid">
+                    <div class="info-row">
+                        <span class="info-label">PRN Number</span>
+                        <span class="info-value">{{user.prn}}</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Studying Year</span>
+                        <span class="info-value">Year {{user.year}}</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Division</span>
+                        <span class="info-value">{{user.division}}</span>
+                    </div>
+
+                    <div class="info-row password-row">
+                        <span class="info-label">Password</span>
+                        <div class="password-wrapper">
+                            <!-- Stored in data-raw attribute so JS can toggle it safely -->
+                            <span id="password-field" data-raw="{{user.password}}">••••••••</span>
+                            <button type="button" id="toggle-password-btn" class="btn-text">Show</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Script injected at the bottom for quick rendering -->
+    <script src="/js/stdprofile.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,7 +62,7 @@
 </body>
 </html>
 
-
+ --}}
 
 
 
@@ -90,3 +90,102 @@ Additional Privacy Terms:
 • We are not responsible for any information shared voluntarily by users in chats.
 
 By using College Dost, you agree to our privacy practices and terms. --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="/css/PrivacyP.css">
+    <!-- Google Fonts for professional typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <div id="main">
+        <div id="header">
+            <div class="logo">College Dost</div>    
+            <div class="policy"><h1>Privacy Policy</h1></div>
+            <div class="box">
+                <a href="/" class="btn btn-secondary">Home</a>
+            </div>
+        </div>
+
+        <!-- Ghost spacer to prevent fixed header content overlapping -->
+        <div id="fakeheader"></div>
+
+        <div id="page1">
+            <div class="intro-container animate-fade-in">
+                <h3>We value your privacy and are committed to protecting your personal information.</h3>
+            </div>
+
+            <div class="policy-container">
+                <ul class="policy-list">
+                    <li class="policy-item">We collect basic information such as name, email, and academic details for platform usage.</li>
+                    <li class="policy-item">Your data is stored securely and is not shared with third parties without your consent.</li>
+                    <li class="policy-item">Chat messages are used only for communication purposes within the platform.</li>
+                    <li class="policy-item">Anonymous chat ensures that your identity remains hidden from other users.</li>
+                    <li class="policy-item">We may store your login credentials in encrypted format for security purposes.</li>
+                    <li class="policy-item">Your activity (such as messages and interactions) may be monitored to improve user experience and prevent misuse.</li>
+                    <li class="policy-item">We do not sell, rent, or trade your personal information to any external organizations.</li>
+                    <li class="policy-item">Only authorized admins can access limited user data for management and security purposes.</li>
+                    <li class="policy-item">Users are responsible for keeping their login credentials confidential.</li>
+                    <li class="policy-item">We may use cookies or session data to keep you logged in and improve performance.</li>
+                    <li class="policy-item">In case of any suspicious activity, we reserve the right to review user data for security reasons.</li>
+                    <li class="policy-item">Users can request deletion of their account and data by contacting the admin.</li>
+                    <li class="policy-item">We are not responsible for any information shared voluntarily by users in chats.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded JS for interactivity -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Scroll Progress Bar
+            const progressBar = document.getElementById("scroll-progress");
+            window.addEventListener("scroll", () => {
+                const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                if (totalScroll > 0) {
+                    const scrollPercentage = (window.scrollY / totalScroll) * 100;
+                    progressBar.style.width = `${scrollPercentage}%`;
+                }
+            });
+
+            // 2. Intersection Observer for block-by-block reveal animations
+            const policyItems = document.querySelectorAll('.policy-item');
+            
+            const observerOptions = {
+                root: null,
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px" // Triggers slightly before elements enter view
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Adds staggered delay effect based on viewport arrival
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index % 3 * 100); 
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            policyItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
+
+

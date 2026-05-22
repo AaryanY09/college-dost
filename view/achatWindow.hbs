@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body>
+
+<!-- NAVBAR (FROM 1ST DESIGN) -->
+<header class="navbar">
+  <div class="logo">CollegeDost</div>
+  <h2 class="title">Chat</h2>
+ 
+  <a href="{{#ifCond user.role 'student'}}/student/dashboard{{else}}/mentor/mentorDash{{/ifCond}}" class="back-btn">
+  ← Back
+</a>
+
+</header>
+
+<div class="chat-container">
+
+  <!-- MESSAGES -->
+  <div id="messages" class="chat-box">
+    {{#each messages}}
+      <div class="message {{#ifCond asender_prn ../user.prn}}sent{{else}}received{{/ifCond}}">
+
+        <!-- FILE -->
+        {{#if afile_url}}
+          {{#ifCond amessage_type "image"}}
+            <img src="{{afile_url}}" class="chat-img" onclick="window.open('{{afile_url}}')">
+          {{else ifCond amessage_type "video"}}
+            <video src="{{afile_url}}" controls class="chat-video"></video>
+          {{else}}
+            <a href="{{afile_url}}" target="_blank">📄 Download File</a>
+          {{/ifCond}}
+        {{/if}}
+
+        <!-- TEXT -->
+        {{#if amessage}}
+          <p>{{amessage}}</p>
+        {{/if}}
+
+        <!-- TIME -->
+        <div class="meta">
+          <span class="time" data-time="{{acreated_at}}"></span>
+
+          {{#ifCond asender_prn ../user.prn}}
+            <span class="tick {{#if ais_seen}}seen{{/if}}">
+              ✔✔
+            </span>
+          {{/ifCond}}
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+
+  <!-- INPUT AREA (LIKE 1ST UI) -->
+  <div class="input-area">
+    <input type="text" id="msg" class="chat-input" placeholder="Type message...">
+    <input type="file" id="fileInput">
+    <button class="send-btn" onclick="send()">Send</button>
+  </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+const achatId = "{{achatId}}";
+const userPrn = "{{user.prn}}";
+
+socket.emit("join-chat", achatId);       //User:“Put me in chat room = chatId”
+
+// SEND
+async function send(){
+  const msgInput = document.getElementById("msg");
+  const fileInput = document.getElementById("fileInput");
+
+  const msg = msgInput.value;       //send text and file both, or either of them. If both empty, do nothing.
+  const file = fileInput.files[0];
+
+  if(!msg && !file) return;
+
+  let fileUrl = null;
+  let type = "text";
+
+  if(file){
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const res = await fetch("/upload", {    //If file exists → upload
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+    fileUrl = data.fileUrl;
+
+    if(file.type.startsWith("image")) type = "image";
+    else if(file.type.startsWith("video")) type = "video";
+    else type = "file";
+  }
+
+//Send message via socket
+  socket.emit("message", {
+    achatId,
+    senderPrn: userPrn,
+    message: msg,
+    fileUrl,
+    message_type: type
+  });
+
+  msgInput.value = "";
+  fileInput.value = "";
+}
+
+// SERVER RECEIVE MESSAGES
+socket.on("chat-message", (data) => {
+  addMessage(data);
+});
+
+// ADD MESSAGE
+function addMessage(data){
+  const div = document.createElement("div");
+
+  div.classList.add("message");
+  div.classList.add(data.senderPrn == userPrn ? "sent" : "received");
+
+if(data.fileUrl){
+  if(data.message_type === "image"){
+    div.innerHTML += `<img src="${data.fileUrl}" class="chat-img" onclick="window.open('${data.fileUrl}')">`;
+  } 
+  else if(data.message_type === "video"){
+    div.innerHTML += `<video src="${data.fileUrl}" controls class="chat-video"></video>`;
+  } 
+  else {
+    div.innerHTML += `<a href="${data.fileUrl}" target="_blank">📄 Download</a>`;
+  }
+}
+
+  if(data.message){
+    div.innerHTML += `<p>${data.message}</p>`;
+  }
+
+  const now = new Date();
+  const formattedTime = now.toLocaleString("en-IN", {
+    day: "numeric",
+    month: "short",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true
+  });
+
+  div.innerHTML += `
+    <div class="meta">
+      <span>${formattedTime}</span>
+    </div>
+  `;
+
+  document.getElementById("messages").appendChild(div);
+  scrollToBottom();
+}
+
+// ENTER KEY
+document.getElementById("msg").addEventListener("keypress", function(e){
+  if(e.key === "Enter"){
+    e.preventDefault();
+    send();
+  }
+});
+
+// AUTO SCROLL
+function scrollToBottom(){
+  const div = document.getElementById("messages");
+  div.scrollTop = div.scrollHeight;
+}
+
+window.onload = function(){
+  formatTime();
+  scrollToBottom();
+};
+
+// FORMAT TIME
+function formatTime(){
+  document.querySelectorAll(".time").forEach(t => {
+    const val = t.dataset.time;
+
+    if(!val){
+      t.innerText = "";
+      return;
+    }
+
+    const d = new Date(val);
+
+    if(isNaN(d)){
+      t.innerText = "";
+      return;
+    }
+
+    t.innerText = d.toLocaleString("en-IN", {
+      day: "numeric",
+      month: "short",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true
+    });
+  });
+}
+</script>
+
+</body>
+</html>
+

@@ -1,32 +1,34 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentor Dashboard</title>
     <link rel="stylesheet" href="/css/mentordash.css">
+    <!-- Google Fonts for an optimized, crisp interface -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="main">
 
-   
+    <!-- Header Navigation Section -->
     <div id="header">
         <div class="logo">CollegeDost</div>
-                <h3>Mentor dashboard</h3>
+        <h3>Mentor Dashboard</h3>
         <ul class="navbar">
-            
-            
-            <li><a href="mentprofile">Profile</a></li>
-            <li><a href="/mentor/logout" class="btn">Logout</a></li>
+            <li><a href="mentprofile" class="nav-link">Profile</a></li>
+            <li><a href="/mentor/logout" class="btn-logout">Logout</a></li>
         </ul>
     </div>
 
-\
-
-   
+    <!-- Layout spacer matching the fixed header height -->
     <div id="fakeheader"></div>
 
-   
+    <!-- Hero Greeting Segment -->
     <div id="hero">
         <div class="welcome">
             <h1>Hello, {{mentor.name}} 👋</h1>
@@ -34,55 +36,91 @@
         </div>
     </div>
 
-   
+    <!-- Main Grid Workspace Controls -->
     <div id="cards">
 
         <div class="card">
-            <h3>📚 Share content</h3>
-            <p>Share technical/non-technical contents/information</p>
-            <img src="\images\ment contents.png" alt="">
-            {{!-- <button accesskey="">Explore</button> --}}
-            <a href="#" class="btn">Share</a>
+            <div class="card-content">
+                <h3>📚 Share Content</h3>
+                <p>Share technical/non-technical contents/information</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/ment contents.png" alt="Share Content Illustration">
+            </div>
+            <a href="/shareConMent/mentor" class="btn-action">Share</a>
         </div>
 
         <div class="card">
-            <h3>Announcement🔉</h3>
-            <p>Announce about events/internships,etc.</p>
-            <img src="\images\announcements.png" alt="">
-            <a href="#" class="btn">Find</a>
+            <div class="card-content">
+                <h3>📢 Announcement</h3>
+                <p>Announce about events/internships, etc.</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/announcements.png" alt="Announcements Illustration">
+            </div>
+            <a href="/announcement/mentor" class="btn-action">Open</a>
         </div>
 
         <div class="card">
-            <h3>👨‍🏫My invoice students</h3>
-            <p>Guide students</p>
-            <img src="\images\mentor in std dash.png" alt="">
-            <a href="#" class="btn">See</a>
+            <div class="card-content">
+                <h3>💬 Chat</h3>
+                <p>Chat with your novice student</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/chat std img.png" alt="Chat Illustration">
+            </div>
+            <a href="/chats" class="btn-action">Chat</a>
         </div>
 
         <div class="card">
-            <h3>💬 Chat</h3>
-            <p>Chat with your invoice student</p>
-            <img src="\images\chat std img.png" alt="">
-            <a href="#" class="btn">Chat</a>
+            <div class="card-content">
+                <h3>🗨️ Anonymous Chat</h3>
+                <p>Ask anything freely</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/anonymous.png" alt="Anonymous Chat Illustration">
+            </div>
+            <a href="/achats" class="btn-action">Anonymous Chat</a>
         </div>
 
         <div class="card">
-            <h3>🗨️ Anonymous Chat</h3>
-            <p>Ask anything freely</p>
-            <img src="\images\anonymous.png" alt="">
-            <a href="#" class="btn">Anonymous chat</a>
+            <div class="card-content">
+                <h3>🌟 Alumni Spotlights</h3>
+                <p>Learn from real experiences</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/spotlight.png" alt="Alumni Spotlight Illustration">
+            </div>
+            <a href="/spotlight/mentor" class="btn-action">Spotlight</a>
         </div>
 
         <div class="card">
-            <h3>🌟 Alumni Spotlights</h3>
-            <p>Learn from real experiences</p>
-            <img src="\images\spotlight.png" alt="">
-            <a href="#" class="btn">Spotlight</a>
+            <div class="card-content">
+                <h3>🏢 Corporate Culture</h3>
+                <p>Shared non-technical corporate culture and human behavior</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/mentor.png" alt="Corporate Culture Illustration">
+            </div>
+            <a href="/culture/mentor" class="btn-action">Explore</a>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>🎓 Contents from Alumni</h3>
+                <p>Shared industrial contents/information/updates</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="/images/corporate contents.png" alt="Alumni Contents Illustration">
+            </div>
+            <a href="/shareConAlu/mentor" class="btn-action">Show</a>
         </div>
 
     </div>
 
 </div>
 
+<!-- Injected script handling entrance and parallax states -->
+<script src="/js/mentordash.js"></script>
 </body>
 </html>

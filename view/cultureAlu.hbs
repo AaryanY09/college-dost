@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Culture Board</title>
+    <link rel="stylesheet" href="/css/cultureAlu.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2 class="title">Alumni Control Center</h2>
+    <a href="/alumni/alumnidash" class="back-btn">← Dashboard</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<div class="layout">
+
+    <!-- LEFT: CREATE POST -->
+    <div class="left-panel">
+        <div class="glass-box">
+            <h3>📢 Share Office Culture</h3>
+            <form action="/culture/post" method="POST" enctype="multipart/form-data" id="postForm">
+                <div class="input-group">
+                    <input type="text" name="title" placeholder="Enter title" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="message" placeholder="Write your message... use shift+enter for new lines!" required></textarea>
+                </div>
+                <div class="file-wrapper">
+                    <!-- Kept backend name="file" intact, moved structurally next to label -->
+                    <input id="file-upload" type="file" name="file">
+                    <label for="file-upload" class="custom-file-upload">
+                        <span>📁 Choose File</span>
+                    </label>
+                    <div id="file-name-preview">No file chosen</div>
+                </div>
+                <button type="submit" class="submit-btn">Post Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- RIGHT: FEED -->
+    <div class="right-panel" id="feedPanel">
+        {{#each culture}}
+        <div class="card" data-id="{{this.culture_id}}">
+            <div class="card-top">
+                <h3>{{this.title}}</h3>
+                <span class="time">🕒 {{this.created_at}}</span>
+            </div>
+
+            <!-- Pre-wrap ensures formatting is safely preserved visually -->
+            <p class="desc">{{this.message}}</p>
+
+            <div class="meta">
+                <span>👨‍🏫 {{this.alumni_name}}</span>
+            </div>
+
+            <div class="card-actions">
+                {{#if this.file_url}}
+                <a href="{{this.file_url}}" class="btn green" download>
+                    📥 Download File
+                </a>
+                {{/if}}
+                <a href="/culture/delete/{{this.culture_id}}" class="btn red delete-action">
+                    🗑️ Delete
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script src="/js/cultureAlu.js"></script>
+</body>
+</html>

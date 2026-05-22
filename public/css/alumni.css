@@ -1,0 +1,118 @@
+body { font-family: Arial; background: #f5f5f5; }
+
+header {
+    background: linear-gradient(to right, #6a5acd, #7b68ee);
+    color: white;
+    padding: 15px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Remove default margin */
+body {
+    margin: 0;
+}
+
+/* Header container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    padding: 18px 30px;
+    background: linear-gradient(90deg, #6a5acd, #7b68ee);
+    color: white;
+}
+
+/* Left logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Center title */
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Right back button */
+.back-btn {
+    background: green;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.back-btn:hover {
+    background: darkgreen;
+    transform: scale(1.05);
+}
+/* Container layout */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card design */
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* 🔥 Card hover effect */
+.card:hover {
+    transform: translateY(-8px); /* lift up */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.card h3 {
+    margin: 0 0 10px;
+}
+
+/* Text */
+.card p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* 🔥 Read button (different color + rounded) */
+.card button {
+    background: #ff7a18;          /* orange color */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;         /* rounded like send button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for button */
+.card button:hover {
+    background: #e66a00;
+    transform: scale(1.05);
+}

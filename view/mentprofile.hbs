@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile</title>
     <link rel="stylesheet" href="/css/mentprofile.css">
+    
 </head>
 <body>
     <div id="main">
 
         <div id="header">
-            <div class="logo">LOGO</div>
+            <div class="logo">College Dost</div>
             <h2>MY Profile</h2>
             <div class="box">
                     <a href="/mentor/mentordash" class="btn btn-secondary">Back</a>
@@ -21,19 +22,6 @@
         <div id="fakeheader"></div>
 
         <div id="page">
-             {{!-- <form action="/student/signup" method="POST">
-                            <input name="prn" placeholder="PRN">
-                            <input name="name" placeholder="Name">
-                            <input name="year" placeholder="Studying Year (Enter in number(eg,1,2,3,4))">
-                            <input name="division" placeholder="Division">
-                            <input name="password" placeholder="Password">
-                    <button type="submit">Signup</button>
-                     {{#if message}}
-                            <p style="color:red;">{{message}}</p>
-                     {{/if}}
-
-                     <a href="/student/studentlog" class="btn">Student Login</a>  
-              </form> --}}
 
               <div id="box">
                 <ul>
@@ -52,6 +40,81 @@
         
     </div>
 
-    
+    <script src="/js/mentprofile.js"></script>
+</body>
+</html> --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | College Dost</title>
+    <link rel="stylesheet" href="/css/mentprofile.css">
+    <!-- Google Fonts for an optimized, crisp interface -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+
+        <!-- Unified Navigation Header -->
+        <div id="header">
+            <div class="logo">College Dost</div>
+            <h2>My Profile</h2>
+            <div class="box">
+                <a href="/mentor/mentordash" class="btn-back">Back</a>
+            </div>
+        </div>
+
+        <!-- Matches the fixed header height to prevent page clipping -->
+        <div id="fakeheader"></div>
+
+        <!-- Content Body Window -->
+        <div id="page">
+            <div id="profile-card">
+                
+                <!-- Profile Header / Dynamic Avatar Section -->
+                <div class="profile-avatar-section">
+                    <div class="avatar-circle">
+                        {{#if mentor.name}}
+                            <span id="avatar-initials"></span>
+                        {{else}}
+                            👨‍🏫
+                        {{/if}}
+                    </div>
+                    <h3 class="profile-display-name">{{mentor.name}}</h3>
+                    <span class="profile-tag">Authorized Mentor</span>
+                </div>
+
+                <!-- Structured Profile Data Fields -->
+                <div class="profile-info-grid">
+                    <div class="info-row">
+                        <span class="info-label">PRN / ID Number</span>
+                        <span class="info-value">{{mentor.prn}}</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Assigned Division</span>
+                        <span class="info-value">Division {{mentor.division}}</span>
+                    </div>
+
+                    <div class="info-row password-row">
+                        <span class="info-label">Security Password</span>
+                        <div class="password-wrapper">
+                            <!-- Raw value cached inside attribute so script can read and toggle it -->
+                            <span id="password-display" data-raw="{{mentor.password}}">••••••••</span>
+                            <button type="button" id="toggle-password-btn" class="btn-inline-toggle">Show</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Script asset loaded at closing body edge -->
+    <script src="/js/mentprofile.js"></script>
 </body>
 </html>

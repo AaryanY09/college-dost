@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+    <title>alumni Shared culture to mentor</title>
+
+    <link rel="stylesheet"
+    href="/css/cultureMent.css">
+
+</head>
+
+<body>
+
+<div id="main">
+
+<header id="header">
+
+    <div class="logo">
+        CollegeDost
+    </div>
+
+    <h2>
+        Shared culture
+    </h2>
+
+    <a href="/mentor/mentordash"
+    class="back-btn">
+        ← Back
+    </a>
+
+</header>
+
+<div id="fakeheader"></div>
+
+<!-- MAIN CONTENT AREA -->
+<div class="content-container">
+
+    {{#each culture}}
+
+    <div class="content-card">
+
+        <!-- TITLE -->
+        <h3 class="content-title">
+            📌 {{this.title}}
+        </h3>
+
+        <!-- DESCRIPTION -->
+        <p class="content-message">
+            {{this.message}}
+        </p>
+
+        <!-- META INFO -->
+        <div class="content-meta">
+
+            <span>👨‍🏫 {{this.alumni_name}}</span>
+
+            <span>📅 {{this.created_at}}</span>
+
+        </div>
+
+        <!-- FILE SECTION -->
+        {{#if this.file_url}}
+
+        <div class="file-section">
+
+            <a href="{{this.file_url}}"
+               download
+               class="download-btn">
+
+                ⬇ Download Resource
+
+            </a>
+
+        </div>
+
+        {{/if}}
+
+    </div>
+
+    {{/each}}
+
+</div>
+
+</div>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/cultureMent.js"></script>
+
+</body>
+</html>

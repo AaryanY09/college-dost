@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat List</title>
+
+  <link rel="stylesheet" href="/css/chatlist.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h2>💬 Chats</h2>
+    <input type="text" id="search" placeholder="Search user..." onkeyup="filterChats()">
+  </div>
+
+  <!-- CHAT LIST -->
+  <div id="chatList">
+
+    {{#each data}}
+      <div class="chat-card" onclick="openChat('{{prn}}')">
+
+        <!-- Avatar (only for student) -->
+        {{#ifCond ../user.role "student"}}
+          <div class="avatar">
+            {{name.[0]}}
+          </div>
+        {{/ifCond}}
+
+        <div class="info">
+          <h3>
+            {{#ifCond ../user.role "student"}}
+              {{name}}
+            {{else}}
+              Anonymous
+            {{/ifCond}}
+          </h3>
+          <p>Tap to start conversation</p>
+        </div>
+
+        <div class="arrow">›</div>
+
+      </div>
+    {{/each}}
+
+  </div>
+
+</div>
+
+<script>
+
+function openChat(prn){
+  window.location.href = "/achats/start/" + prn;
+}
+
+// 🔍 SEARCH FILTER
+function filterChats(){
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".chat-card");
+
+  cards.forEach(card => {
+    let name = card.querySelector("h3").innerText.toLowerCase();
+
+    if(name.includes(input)){
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+</script>
+
+</body>
+</html>

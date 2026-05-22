@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,25 +90,115 @@ Through features like real-time chat, structured roadmaps, and alumni insights, 
 </body>
 </html>
 
+ --}}
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | College Dost</title>
+    <link rel="stylesheet" href="/css/AboutUs.css">
+    <!-- GSAP & ScrollTrigger CDNs for seamless interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    
+    <div id="main">
+        <!-- Main Fixed Light Navigation Header -->
+        <div id="header">
+            <div class="logo">COLLEGE DOST</div>     
+            <div class="about-title-header"><h1>About Us</h1></div>
+            <div class="box">
+                <a href="/" class="home-btn">← Home</a>
+            </div>
+        </div>
 
+        <!-- Spacer to prevent fixed header overlap layout jumps -->
+        <div id="fakeheader"></div>
 
+        <!-- Hero Context Area -->
+        <div id="hero-about">
+            <div class="intro-container">
+                <p class="intro-lead">
+                    College Dost is a student-driven platform built to simplify the journey of engineering students.
+                </p>
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <p>We understand that juniors often struggle due to a lack of proper guidance, while seniors and alumni possess valuable knowledge that often remains unshared.</p>
+                    </div>
+                    <div class="intro-card">
+                        <p>This platform connects juniors with mentors and alumni to provide guidance on academics, placements, and real-world skills through real-time tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Structured Core Information Sections -->
+        <div id="page1">
+            <div class="content-wrapper">
+                
+                <!-- Section 1: Highlights -->
+                <div class="info-section scroll-reveal">
+                    <h2 class="section-heading">Key Highlights</h2>
+                    <div class="cards-grid">
+                        <div class="feature-box">Direct communication between juniors and experienced mentors.</div>
+                        <div class="feature-box">Access to alumni experiences and industry insights.</div>
+                        <div class="feature-box">Semester-wise roadmap for skill development.</div>
+                        <div class="feature-box">Safe and supportive environment with optional anonymous communication.</div>
+                    </div>
+                </div>
 
+                <!-- Section 2: Vision & Mission Matrix Layout -->
+                <div class="matrix-grid">
+                    <div class="info-section scroll-reveal panel-card">
+                        <h2 class="section-heading">Our Vision</h2>
+                        <p class="panel-text">To create a strong student community where knowledge and experience are shared freely, helping every student grow academically and professionally.</p>
+                    </div>
 
+                    <div class="info-section scroll-reveal panel-card">
+                        <h2 class="section-heading">Our Mission</h2>
+                        <ul class="clean-list">
+                            <li>Reduce the gap between juniors and seniors.</li>
+                            <li>Provide reliable and structured guidance.</li>
+                            <li>Build a collaborative learning environment.</li>
+                            <li>Support students in achieving their academic and career goals.</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <!-- Section 3: Future Scope Roadmap -->
+                <div class="info-section scroll-reveal">
+                    <h2 class="section-heading">Future Scope</h2>
+                    <div class="cards-grid scope-grid">
+                        <div class="scope-card">
+                            <span class="step-num">01</span>
+                            <p>Expanding the platform to multiple colleges across regions.</p>
+                        </div>
+                        <div class="scope-card">
+                            <span class="step-num">02</span>
+                            <p>Adding direct internship and live placement support tracks.</p>
+                        </div>
+                        <div class="scope-card">
+                            <span class="step-num">03</span>
+                            <p>Enhancing artificial intelligence mentor selection and feedback systems.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Dynamic Bottom Motto Block -->
+                <div class="motto-container scroll-reveal">
+                    <p class="motto-text">Our goal is to create a reliable and supportive ecosystem where students help each other succeed and grow together.</p>
+                </div>
 
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
+    <!-- Inject script dynamically -->
+    <script src="/js/AboutUs.js"></script>
+</body>
+</html>

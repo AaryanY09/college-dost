@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Content Board</title>
+    <link rel="stylesheet" href="/css/shareConAluAlu.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">CollegeDost</div>
+    <h2 class="title">Alumni Control Center</h2>
+    <a href="/alumni/alumnidash" class="back-btn">← Dashboard</a>
+</header>
+
+<div id="fakeheader"></div>
+
+<div class="layout">
+
+    <!-- LEFT: CREATE POST -->
+    <div class="left-panel">
+        <div class="glass-box">
+            <h3>📢 Create Content</h3>
+            <form action="/shareConAlu/post" method="POST" enctype="multipart/form-data" id="contentForm">
+                <div class="input-group">
+                    <input type="text" name="title" placeholder="Enter title" required>
+                </div>
+                
+                <div class="input-group">
+                    <textarea name="message" placeholder="Write your message... Line breaks and spaces will be preserved exactly as you type!" required></textarea>
+                </div>
+                
+                <div class="file-wrapper">
+                    <!-- Moved the hidden input inside or cleanly bound alongside the label -->
+                    <input id="file-upload" type="file" name="file">
+                    <label id="file-label-trigger" for="file-upload" class="custom-file-upload">
+                        <span>📁 Choose File</span>
+                    </label>
+                    <div id="file-name-preview">No file chosen</div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Post Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- RIGHT: FEED -->
+    <div class="right-panel" id="feedPanel">
+        {{#each shareConAlu}}
+        <div class="card" data-id="{{this.shareConAlu_id}}">
+            <div class="card-top">
+                <h3>{{this.title}}</h3>
+                <span class="time">🕒 {{this.created_at}}</span>
+            </div>
+
+            <!-- Pre-wrap formatting allows custom spacing and returns natively -->
+            <p class="desc">{{this.message}}</p>
+
+            <div class="meta">
+                <span>👨‍🏫 {{this.alumni_name}}</span>
+            </div>
+
+            <div class="card-actions">
+                {{#if this.file_url}}
+                <a href="{{this.file_url}}" class="btn green" download>
+                    📥 Download File
+                </a>
+                {{/if}}
+                <a href="/shareConAlu/delete/{{this.shareConAlu_id}}" class="btn red delete-action">
+                    🗑️ Delete
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<script src="/js/shareConAluAlu.js"></script>
+</body>
+</html>

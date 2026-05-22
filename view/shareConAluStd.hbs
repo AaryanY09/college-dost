@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Shared Content to Student</title>
+    <!-- Importing Poppins for a premium, clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shareConAluStd.css">
+</head>
+<body>
+
+<div id="main">
+
+    <!-- WHITE THEME HEADER -->
+    <header id="header">
+        <div class="logo">CollegeDost</div>
+        <h2>Shared content from alumni</h2>
+        <a href="/student/dashboard" class="back-btn">
+            <span>←</span> Back
+        </a>
+    </header>
+
+    <div id="fakeheader"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="content-container" id="contentContainer">
+        {{#each shareConAlu}}
+        <div class="content-card">
+            <!-- TITLE -->
+            <h3 class="content-title">
+                <span class="pin-icon">📌</span> {{this.title}}
+            </h3>
+
+            <!-- DESCRIPTION (Maintains spacing and line breaks) -->
+            <p class="content-message">{{this.message}}</p>
+
+            <!-- META INFO -->
+            <div class="content-meta">
+                <span class="meta-item">👨‍🏫 {{this.alumni_name}}</span>
+                <span class="meta-item">📅 {{this.created_at}}</span>
+            </div>
+
+            <!-- FILE SECTION -->
+            {{#if this.file_url}}
+            <div class="file-section">
+                <a href="{{this.file_url}}" download class="download-btn">
+                    <span class="dl-icon">⬇</span> Download Resource
+                </a>
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </main>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/shareConAluStd.js"></script>
+</body>
+</html>
